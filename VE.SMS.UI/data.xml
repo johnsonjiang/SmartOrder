@@ -1,0 +1,85 @@
+﻿<?xml version="1.0"?>
+<statuslist>
+  <statusgroup name="enquiry">
+    <status key="新咨询单A" value="新咨询单A"/>
+    <status key="新咨询单B" value="新咨询单B"/>
+    <status key="跟进中" value="跟进中"/>
+    <status key="申请测量" value="申请测量"/>
+    <status key="申请CAD细化" value="申请CAD细化"/>
+    <status key="申请报价" value="申请报价"/>
+    <status key="已成订单" value="已成订单"/>
+    <status key="终止咨询" value="终止咨询"/>
+  </statusgroup>
+  <statusgroup name="quotation">
+    <status key="编辑中" value="编辑中"/>
+    <status key="报价完成" value="报价完成"/>
+    <status key="待确认" value="待确认"/>
+    <status key="确认" value="确认"/>
+    <status key="不确认" value="不确认"/>
+  </statusgroup>
+  <statusgroup name="order">
+    <status key="编辑中" value="编辑中"/>
+    <status key="新订单" value="新订单"/>
+    <status key="处理中" value="处理中"/>
+    <status key="申请报价" value="申请报价"/>
+    <status key="申请测量" value="申请测量"/>
+    <status key="申请CAD细化" value="申请CAD细化"/>
+    <status key="申请生产" value="申请生产"/>
+    <status key="申请采购" value="申请采购"/>
+    <status key="申请送货安装" value="申请送货安装"/>
+    <status key="待付款" value="待付款"/>
+    <status key="款已付" value="款已付"/>
+    <status key="订单完成/款讫" value="订单完成/款讫"/>
+    <status key="订单完成/款未讫" value="订单完成/款未讫"/>
+  </statusgroup>
+  <statusgroup name="refine">
+    <status key="待细化" value="待细化"/>
+    <status key="作图中" value="作图中"/>
+    <status key="细化完成" value="细化完成"/>
+    <status key="细化完成+" value="细化完成+"/>
+    <status key="细化完成待审核" value="细化完成待审核"/>
+    <status key="细化完成+待审核" value="细化完成+待审核"/>
+    <status key="待确认" value="待确认"/>
+    <status key="要求修改" value="要求修改"/>
+    <status key="已确认" value="已确认"/>
+  </statusgroup>
+  <statusgroup name="mach">
+    <status key="新生产单" value="新生产单"/>
+    <status key="待开加工单" value="待开加工单"/>
+    <status key="开加工单中" value="开加工单中"/>
+    <status key="加工单完成" value="加工单完成"/>
+    <status key="待生产" value="待生产"/>
+    <status key="生产中" value="生产中"/>
+    <status key="生产完成" value="生产完成"/>
+    <status key="申请采购" value="申请采购"/>
+  </statusgroup>
+  <statusgroup name="delivery">
+    <status key="待提货" value="待提货"/>
+    <status key="提货安排中" value="提货安排中"/>
+    <status key="已提货" value="已提货"/>
+    <status key="待送货" value="待送货"/>
+    <status key="送货安排中" value="送货安排中"/>
+    <status key="已送货" value="已送货"/>
+    <status key="待送货安装" value="待送货安装"/>
+    <status key="已送货安装" value="已送货安装"/>
+  </statusgroup>
+  <statusgroup name="settlement">
+    <status key="编辑中" value="编辑中"/>
+    <status key="新结算单" value="新结算单"/>
+    <status key="已发客户" value="已发客户"/>
+    <status key="已签字" value="已签字"/>
+    <status key="款未讫" value="款未讫"/>
+    <status key="款讫" value="款讫"/>
+  </statusgroup>
+  <statusgroup name="survey">
+    <status key="待测量" value="待测量"/>
+    <status key="测量安排中" value="测量安排中"/>
+    <status key="测量完成" value="测量完成"/>
+  </statusgroup>
+  <statusgroup name="purchase">
+    <status key="待采购" value="待采购"/>
+    <status key="采购中" value="采购中"/>
+    <status key="采购完成" value="采购完成"/>
+  </statusgroup>
+  
+</statuslist>

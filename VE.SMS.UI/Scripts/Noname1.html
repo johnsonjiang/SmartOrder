@@ -1,0 +1,43 @@
+<script src="jquery-1.8.3.js" language="javascript">
+<script src="jquery.ui.datepicker.js" language="javascript">
+
+
+
+<script language="javascript"> 
+
+$(document).ready(function() { 
+
+var yearFrom=new Date().getYear()-60+1900; 
+
+var yearTo=new Date().getYear()-18+1900; 
+
+$('#dateinput').datepicker({ 
+
+dateFormat: 'yy-mm-dd', 
+
+buttonImage: 'calendar.gif', 
+
+buttonImageOnly: true, 
+
+showOn: 'both', 
+
+yearRange: yearFrom+':'+yearTo, 
+
+clearText:'清除', 
+
+closeText:'关闭', 
+
+prevText:'前一月', 
+
+nextText:'后一月', 
+
+currentText:' ', 
+
+monthNames:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'], 
+
+}); 
+
+}); 
+
+</script>
+<input type="text" id="dateinput">

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{93FCD46D-644E-48F5-97B6-06DC689F2C62}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VE.SMS.DAL</RootNamespace>
+    <AssemblyName>VE.SMS.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDAL.cs" />
+    <Compile Include="ConfigDAL.cs" />
+    <Compile Include="ConfigItemDAL.cs" />
+    <Compile Include="CustomerDAL.cs" />
+    <Compile Include="CustomerDrawingDAL.cs" />
+    <Compile Include="DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryDAL.cs" />
+    <Compile Include="DeliveryItemDAL.cs" />
+    <Compile Include="EndProductDAL.cs" />
+    <Compile Include="EnquiryDAL.cs" />
+    <Compile Include="FollowUpDAL.cs" />
+    <Compile Include="FooterDAL.cs" />
+    <Compile Include="InstallLookupDAL.cs" />
+    <Compile Include="LineItemDAL.cs" />
+    <Compile Include="MachiningDAL.cs" />
+    <Compile Include="MachItemDAL.cs" />
+    <Compile Include="MachLookupDAL.cs" />
+    <Compile Include="MachSummaryDAL.cs" />
+    <Compile Include="MonitorDAL.cs" />
+    <Compile Include="POItemDAL.cs" />
+    <Compile Include="ProductDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseOrderDAL.cs" />
+    <Compile Include="QuotationDAL.cs" />
+    <Compile Include="CADRefinementDAL.cs" />
+    <Compile Include="ReceiptDAL.cs" />
+    <Compile Include="RefineDAL.cs" />
+    <Compile Include="RefineItemDAL.cs" />
+    <Compile Include="RoleDAL.cs" />
+    <Compile Include="RolePermissionItem.cs" />
+    <Compile Include="SalesOrderDAL.cs" />
+    <Compile Include="SampleDAL.cs" />
+    <Compile Include="SampleProvidDAL.cs" />
+    <Compile Include="SeedDAL.cs" />
+    <Compile Include="SettlementDAL.cs" />
+    <Compile Include="SupplierDAL.cs" />
+    <Compile Include="SurveyDAL.cs" />
+    <Compile Include="UserDAL.cs" />
+    <Compile Include="UserRoleItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="DB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

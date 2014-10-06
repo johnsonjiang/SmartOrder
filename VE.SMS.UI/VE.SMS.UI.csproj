@@ -1,0 +1,856 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D751916-16D3-4FEF-8FCA-D9A480ACC9B8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VE.SMS.UI</RootNamespace>
+    <AssemblyName>VE.SMS.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>C:\Users\Administrator\Desktop\AutoComplete_rar\AutoComplete\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessControlManagement.aspx" />
+    <Content Include="data.xml" />
+    <Content Include="DeliveryForm.aspx" />
+    <Content Include="DeliveryList.aspx" />
+    <Content Include="EndProductList.aspx" />
+    <Content Include="EnquiryForm.aspx" />
+    <Content Include="EnquiryList.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Forbidden.aspx" />
+    <Content Include="Images\arrow.gif" />
+    <Content Include="Images\arrow_over.gif" />
+    <Content Include="Images\back.gif" />
+    <Content Include="Images\bg.gif" />
+    <Content Include="Images\button1a.gif" />
+    <Content Include="Images\button4.gif" />
+    <Content Include="Images\button4a.gif" />
+    <Content Include="Images\down.gif" />
+    <Content Include="Images\hover2.gif" />
+    <Content Include="Images\inputbg.gif" />
+    <Content Include="Images\intro.jpg" />
+    <Content Include="Images\lbg.gif" />
+    <Content Include="Images\login.gif" />
+    <Content Include="Images\login01.jpg" />
+    <Content Include="Images\login02.jpg" />
+    <Content Include="Images\login03.jpg" />
+    <Content Include="Images\login04.jpg" />
+    <Content Include="Images\login05.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\password.gif" />
+    <Content Include="Images\top.jpg" />
+    <Content Include="Images\user.gif" />
+    <Content Include="Images\warning.gif" />
+    <Content Include="Login.aspx" />
+    <Content Include="MachiningForm.aspx" />
+    <Content Include="MachiningList.aspx" />
+    <Content Include="OrderForm.aspx" />
+    <Content Include="OrderList.aspx" />
+    <Content Include="ParamEditForm.aspx" />
+    <Content Include="Printout\DeliveryPrintout.aspx" />
+    <Content Include="Printout\EnquiryPrintout.aspx" />
+    <Content Include="Printout\OrderPrintout.aspx" />
+    <Content Include="Printout\PurchasePrintout.aspx" />
+    <Content Include="Printout\QuotationPrintout.aspx" />
+    <Content Include="Printout\SettlementPrintoutControl.ascx" />
+    <Content Include="Printout\SettlementPrintout.aspx" />
+    <Content Include="Printout\SettlementsPrintout.aspx" />
+    <Content Include="Printout\SurveyPrintout.aspx" />
+    <Content Include="ProductForm.aspx" />
+    <Content Include="PurchaseForm.aspx" />
+    <Content Include="PurchaseList.aspx" />
+    <Content Include="QuotationForm.aspx" />
+    <Content Include="SampleList.aspx" />
+    <Content Include="Scripts\jquery-1.8.3.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\printout.js" />
+    <Content Include="SettlementForm.aspx" />
+    <Content Include="SettlementList.aspx" />
+    <Content Include="SnapShot.aspx" />
+    <Content Include="Styles\jquery-ui-1.9.2.custom.css" />
+    <Content Include="Styles\jquery-ui-1.9.2.custom.min.css" />
+    <Content Include="Styles\printout.css" />
+    <Content Include="SurveyForm.aspx" />
+    <Content Include="SurveyList.aspx" />
+    <Content Include="ProductList.aspx" />
+    <Content Include="QuotationList.aspx" />
+    <Content Include="RefineForm.aspx" />
+    <Content Include="RefineList.aspx" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\tabs.js" />
+    <Content Include="Styles\ie.css" />
+    <Content Include="Styles\jquery-ui.css" />
+    <Content Include="Styles\Login.css" />
+    <Content Include="Styles\menu_style.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Homepage.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Styles\tabs.css" />
+    <Content Include="SystemConfiguration.aspx" />
+    <Content Include="_UserControl\CADEditControl.ascx" />
+    <Content Include="_UserControl\CaiLiaoProductLineItemControl.ascx" />
+    <Content Include="_UserControl\CustomerUserControl.ascx" />
+    <Content Include="_UserControl\DeliveryControl.ascx" />
+    <Content Include="_UserControl\DeliveryEditControl.ascx" />
+    <Content Include="_UserControl\FinishProductControl.ascx" />
+    <Content Include="_UserControl\FinishProductEditControl.ascx" />
+    <Content Include="_UserControl\FollowUpTop3UserControl.ascx" />
+    <Content Include="_UserControl\FooterIntroControl.ascx" />
+    <Content Include="_UserControl\InstallConfigurationControl.ascx" />
+    <Content Include="_UserControl\InstallEditControl.ascx" />
+    <Content Include="_UserControl\MachiningControl.ascx" />
+    <Content Include="_UserControl\MachiningInstallUserControl.ascx" />
+    <Content Include="_UserControl\MachiningSummaryControl.ascx" />
+    <Content Include="_UserControl\PrintoutControl.ascx" />
+    <Content Include="_UserControl\ProductInfoControl.ascx" />
+    <Content Include="_UserControl\PurchaseControl.ascx" />
+    <Content Include="_UserControl\ReceiptControl.ascx" />
+    <Content Include="_UserControl\SampleControl.ascx" />
+    <Content Include="_UserControl\SampleListControl.ascx" />
+    <Content Include="_UserControl\SampleProductEditControl.ascx" />
+    <Content Include="_UserControl\SettlementControl.ascx" />
+    <Content Include="_UserControl\SupplierUserControl.ascx" />
+    <Content Include="_UserControl\SurveyEditControl.ascx" />
+    <Content Include="_UserControl\SurveyLineItemControl.ascx" />
+    <Content Include="_UserControl\SystemConfigUserControl.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_UserControl\CADFileListControl.ascx" />
+    <Content Include="_UserControl\CADRefinementControl.ascx" />
+    <Content Include="_UserControl\CustomerDrawingControl.ascx" />
+    <Content Include="_UserControl\CustomerInfoControl.ascx" />
+    <Content Include="_UserControl\EnquiryImageControl.ascx" />
+    <Content Include="_UserControl\FollowUpControl.ascx" />
+    <Content Include="_UserControl\HuangliaoProductLineItemControl.ascx" />
+    <Content Include="_UserControl\JiaProductLineItemControl.ascx" />
+    <Content Include="_UserControl\LineItemsControl.ascx" />
+    <Content Include="_UserControl\MachiningLineItem.ascx" />
+    <Content Include="_UserControl\PermissionControl.ascx" />
+    <Content Include="_UserControl\PianProductLineItemControl.ascx" />
+    <Content Include="_UserControl\RoleManagementControl.ascx" />
+    <Content Include="_UserControl\SurveyControl.ascx" />
+    <Content Include="_UserControl\QuotationControl.ascx" />
+    <Content Include="_UserControl\UserManagementControl.ascx" />
+    <Content Include="_UserControl\UserRoleMangementControl.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessControlManagement.aspx.cs">
+      <DependentUpon>AccessControlManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessControlManagement.aspx.designer.cs">
+      <DependentUpon>AccessControlManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EndProductList.aspx.cs">
+      <DependentUpon>EndProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EndProductList.aspx.designer.cs">
+      <DependentUpon>EndProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forbidden.aspx.cs">
+      <DependentUpon>Forbidden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forbidden.aspx.designer.cs">
+      <DependentUpon>Forbidden.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage.aspx.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Homepage.aspx.designer.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryForm.aspx.cs">
+      <DependentUpon>DeliveryForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeliveryForm.aspx.designer.cs">
+      <DependentUpon>DeliveryForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryList.aspx.cs">
+      <DependentUpon>DeliveryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeliveryList.aspx.designer.cs">
+      <DependentUpon>DeliveryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnquiryForm.aspx.cs">
+      <DependentUpon>EnquiryForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnquiryForm.aspx.designer.cs">
+      <DependentUpon>EnquiryForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnquiryList.aspx.cs">
+      <DependentUpon>EnquiryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnquiryList.aspx.designer.cs">
+      <DependentUpon>EnquiryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ImgLib\GetImage.cs" />
+    <Compile Include="ImgLib\NativeMethods.cs" />
+    <Compile Include="ImgLib\Snapshot.cs" />
+    <Compile Include="ImgLib\UnsafeNativeMethods.cs" />
+    <Compile Include="ImgLib\WebPageSnapshot.cs" />
+    <Compile Include="LinqExtension.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MachiningForm.aspx.cs">
+      <DependentUpon>MachiningForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MachiningForm.aspx.designer.cs">
+      <DependentUpon>MachiningForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MachiningList.aspx.cs">
+      <DependentUpon>MachiningList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MachiningList.aspx.designer.cs">
+      <DependentUpon>MachiningList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MonitorHandler.cs" />
+    <Compile Include="OrderForm.aspx.cs">
+      <DependentUpon>OrderForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderForm.aspx.designer.cs">
+      <DependentUpon>OrderForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderList.aspx.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderList.aspx.designer.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ParamEditForm.aspx.cs">
+      <DependentUpon>ParamEditForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ParamEditForm.aspx.designer.cs">
+      <DependentUpon>ParamEditForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Printout\DeliveryPrintout.aspx.cs">
+      <DependentUpon>DeliveryPrintout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Printout\DeliveryPrintout.aspx.designer.cs">
+      <DependentUpon>DeliveryPrintout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Printout\EnquiryPrintout.aspx.cs">
+      <DependentUpon>EnquiryPrintout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Printout\EnquiryPrintout.aspx.designer.cs">
+      <DependentUpon>EnquiryPrintout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Printout\OrderPrintout.aspx.cs">
+      <DependentUpon>OrderPrintout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Printout\OrderPrintout.aspx.designer.cs">
+      <DependentUpon>OrderPrintout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Printout\PurchasePrintout.aspx.cs">
+      <DependentUpon>PurchasePrintout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Printout\PurchasePrintout.aspx.designer.cs">
+      <DependentUpon>PurchasePrintout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Printout\QuotationPrintout.aspx.cs">
+      <DependentUpon>QuotationPrintout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Printout\QuotationPrintout.aspx.designer.cs">
+      <DependentUpon>QuotationPrintout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Printout\SettlementPrintoutControl.ascx.cs">
+      <DependentUpon>SettlementPrintoutControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Printout\SettlementPrintoutControl.ascx.designer.cs">
+      <DependentUpon>SettlementPrintoutControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Printout\SettlementPrintout.aspx.cs">
+      <DependentUpon>SettlementPrintout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Printout\SettlementPrintout.aspx.designer.cs">
+      <DependentUpon>SettlementPrintout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Printout\SettlementsPrintout.aspx.cs">
+      <DependentUpon>SettlementsPrintout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Printout\SettlementsPrintout.aspx.designer.cs">
+      <DependentUpon>SettlementsPrintout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Printout\SurveyPrintout.aspx.cs">
+      <DependentUpon>SurveyPrintout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Printout\SurveyPrintout.aspx.designer.cs">
+      <DependentUpon>SurveyPrintout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductForm.aspx.cs">
+      <DependentUpon>ProductForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductForm.aspx.designer.cs">
+      <DependentUpon>ProductForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseForm.aspx.cs">
+      <DependentUpon>PurchaseForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseForm.aspx.designer.cs">
+      <DependentUpon>PurchaseForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseList.aspx.cs">
+      <DependentUpon>PurchaseList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseList.aspx.designer.cs">
+      <DependentUpon>PurchaseList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuotationForm.aspx.cs">
+      <DependentUpon>QuotationForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuotationForm.aspx.designer.cs">
+      <DependentUpon>QuotationForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SampleList.aspx.cs">
+      <DependentUpon>SampleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SampleList.aspx.designer.cs">
+      <DependentUpon>SampleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SettlementForm.aspx.cs">
+      <DependentUpon>SettlementForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SettlementForm.aspx.designer.cs">
+      <DependentUpon>SettlementForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SettlementList.aspx.cs">
+      <DependentUpon>SettlementList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SettlementList.aspx.designer.cs">
+      <DependentUpon>SettlementList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmsHandler.ashx.cs">
+      <DependentUpon>SmsHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="SnapShot.aspx.cs">
+      <DependentUpon>SnapShot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SnapShot.aspx.designer.cs">
+      <DependentUpon>SnapShot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SurveyForm.aspx.cs">
+      <DependentUpon>SurveyForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SurveyForm.aspx.designer.cs">
+      <DependentUpon>SurveyForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SurveyList.aspx.cs">
+      <DependentUpon>SurveyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SurveyList.aspx.designer.cs">
+      <DependentUpon>SurveyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuotationList.aspx.cs">
+      <DependentUpon>QuotationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuotationList.aspx.designer.cs">
+      <DependentUpon>QuotationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RefineForm.aspx.cs">
+      <DependentUpon>RefineForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RefineForm.aspx.designer.cs">
+      <DependentUpon>RefineForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RefineList.aspx.cs">
+      <DependentUpon>RefineList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RefineList.aspx.designer.cs">
+      <DependentUpon>RefineList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMSMasterPage.Master.cs">
+      <DependentUpon>SMSMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMSMasterPage.Master.designer.cs">
+      <DependentUpon>SMSMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfiguration.aspx.cs">
+      <DependentUpon>SystemConfiguration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemConfiguration.aspx.designer.cs">
+      <DependentUpon>SystemConfiguration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UIUtility.cs" />
+    <Compile Include="_UserControl\CADEditControl.ascx.cs">
+      <DependentUpon>CADEditControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\CADEditControl.ascx.designer.cs">
+      <DependentUpon>CADEditControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\CaiLiaoProductLineItemControl.ascx.cs">
+      <DependentUpon>CaiLiaoProductLineItemControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\CaiLiaoProductLineItemControl.ascx.designer.cs">
+      <DependentUpon>CaiLiaoProductLineItemControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\CustomerUserControl.ascx.cs">
+      <DependentUpon>CustomerUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\CustomerUserControl.ascx.designer.cs">
+      <DependentUpon>CustomerUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\DeliveryControl.ascx.cs">
+      <DependentUpon>DeliveryControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\DeliveryControl.ascx.designer.cs">
+      <DependentUpon>DeliveryControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\DeliveryEditControl.ascx.cs">
+      <DependentUpon>DeliveryEditControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\DeliveryEditControl.ascx.designer.cs">
+      <DependentUpon>DeliveryEditControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\FinishProductControl.ascx.cs">
+      <DependentUpon>FinishProductControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\FinishProductControl.ascx.designer.cs">
+      <DependentUpon>FinishProductControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\FinishProductEditControl.ascx.cs">
+      <DependentUpon>FinishProductEditControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\FinishProductEditControl.ascx.designer.cs">
+      <DependentUpon>FinishProductEditControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\FollowUpTop3UserControl.ascx.cs">
+      <DependentUpon>FollowUpTop3UserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\FollowUpTop3UserControl.ascx.designer.cs">
+      <DependentUpon>FollowUpTop3UserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\FooterIntroControl.ascx.cs">
+      <DependentUpon>FooterIntroControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\FooterIntroControl.ascx.designer.cs">
+      <DependentUpon>FooterIntroControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\InstallConfigurationControl.ascx.cs">
+      <DependentUpon>InstallConfigurationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\InstallConfigurationControl.ascx.designer.cs">
+      <DependentUpon>InstallConfigurationControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\InstallEditControl.ascx.cs">
+      <DependentUpon>InstallEditControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\InstallEditControl.ascx.designer.cs">
+      <DependentUpon>InstallEditControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\MachiningControl.ascx.cs">
+      <DependentUpon>MachiningControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\MachiningControl.ascx.designer.cs">
+      <DependentUpon>MachiningControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\MachiningInstallUserControl.ascx.cs">
+      <DependentUpon>MachiningInstallUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\MachiningInstallUserControl.ascx.designer.cs">
+      <DependentUpon>MachiningInstallUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\MachiningSummaryControl.ascx.cs">
+      <DependentUpon>MachiningSummaryControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\MachiningSummaryControl.ascx.designer.cs">
+      <DependentUpon>MachiningSummaryControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\PrintoutControl.ascx.cs">
+      <DependentUpon>PrintoutControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\PrintoutControl.ascx.designer.cs">
+      <DependentUpon>PrintoutControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\ProductInfoControl.ascx.cs">
+      <DependentUpon>ProductInfoControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\ProductInfoControl.ascx.designer.cs">
+      <DependentUpon>ProductInfoControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\PurchaseControl.ascx.cs">
+      <DependentUpon>PurchaseControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\PurchaseControl.ascx.designer.cs">
+      <DependentUpon>PurchaseControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\ReceiptControl.ascx.cs">
+      <DependentUpon>ReceiptControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\ReceiptControl.ascx.designer.cs">
+      <DependentUpon>ReceiptControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\SampleControl.ascx.cs">
+      <DependentUpon>SampleControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\SampleControl.ascx.designer.cs">
+      <DependentUpon>SampleControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\SampleListControl.ascx.cs">
+      <DependentUpon>SampleListControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\SampleListControl.ascx.designer.cs">
+      <DependentUpon>SampleListControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\SampleProductEditControl.ascx.cs">
+      <DependentUpon>SampleProductEditControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\SampleProductEditControl.ascx.designer.cs">
+      <DependentUpon>SampleProductEditControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\SettlementControl.ascx.cs">
+      <DependentUpon>SettlementControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\SettlementControl.ascx.designer.cs">
+      <DependentUpon>SettlementControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\SupplierUserControl.ascx.cs">
+      <DependentUpon>SupplierUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\SupplierUserControl.ascx.designer.cs">
+      <DependentUpon>SupplierUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\SurveyEditControl.ascx.cs">
+      <DependentUpon>SurveyEditControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\SurveyEditControl.ascx.designer.cs">
+      <DependentUpon>SurveyEditControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\SurveyLineItemControl.ascx.cs">
+      <DependentUpon>SurveyLineItemControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\SurveyLineItemControl.ascx.designer.cs">
+      <DependentUpon>SurveyLineItemControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\SystemConfigUserControl.ascx.cs">
+      <DependentUpon>SystemConfigUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\SystemConfigUserControl.ascx.designer.cs">
+      <DependentUpon>SystemConfigUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\CADFileListControl.ascx.cs">
+      <DependentUpon>CADFileListControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\CADFileListControl.ascx.designer.cs">
+      <DependentUpon>CADFileListControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\CADRefinementControl.ascx.cs">
+      <DependentUpon>CADRefinementControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\CADRefinementControl.ascx.designer.cs">
+      <DependentUpon>CADRefinementControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\CustomerDrawingControl.ascx.cs">
+      <DependentUpon>CustomerDrawingControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\CustomerDrawingControl.ascx.designer.cs">
+      <DependentUpon>CustomerDrawingControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\CustomerInfoControl.ascx.cs">
+      <DependentUpon>CustomerInfoControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\CustomerInfoControl.ascx.designer.cs">
+      <DependentUpon>CustomerInfoControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\EnquiryImageControl.ascx.cs">
+      <DependentUpon>EnquiryImageControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\EnquiryImageControl.ascx.designer.cs">
+      <DependentUpon>EnquiryImageControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\FollowUpControl.ascx.cs">
+      <DependentUpon>FollowUpControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\FollowUpControl.ascx.designer.cs">
+      <DependentUpon>FollowUpControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\HuangliaoProductLineItemControl.ascx.cs">
+      <DependentUpon>HuangliaoProductLineItemControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\HuangliaoProductLineItemControl.ascx.designer.cs">
+      <DependentUpon>HuangliaoProductLineItemControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\JiaProductLineItemControl.ascx.cs">
+      <DependentUpon>JiaProductLineItemControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\JiaProductLineItemControl.ascx.designer.cs">
+      <DependentUpon>JiaProductLineItemControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\LineItemsControl.ascx.cs">
+      <DependentUpon>LineItemsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\LineItemsControl.ascx.designer.cs">
+      <DependentUpon>LineItemsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\MachiningLineItem.ascx.cs">
+      <DependentUpon>MachiningLineItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\MachiningLineItem.ascx.designer.cs">
+      <DependentUpon>MachiningLineItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\PermissionControl.ascx.cs">
+      <DependentUpon>PermissionControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\PermissionControl.ascx.designer.cs">
+      <DependentUpon>PermissionControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\PianProductLineItemControl.ascx.cs">
+      <DependentUpon>PianProductLineItemControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\PianProductLineItemControl.ascx.designer.cs">
+      <DependentUpon>PianProductLineItemControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\RoleManagementControl.ascx.cs">
+      <DependentUpon>RoleManagementControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\RoleManagementControl.ascx.designer.cs">
+      <DependentUpon>RoleManagementControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\SurveyControl.ascx.cs">
+      <DependentUpon>SurveyControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\SurveyControl.ascx.designer.cs">
+      <DependentUpon>SurveyControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\QuotationControl.ascx.cs">
+      <DependentUpon>QuotationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\QuotationControl.ascx.designer.cs">
+      <DependentUpon>QuotationControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\UserManagementControl.ascx.cs">
+      <DependentUpon>UserManagementControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\UserManagementControl.ascx.designer.cs">
+      <DependentUpon>UserManagementControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_UserControl\UserRoleMangementControl.ascx.cs">
+      <DependentUpon>UserRoleMangementControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_UserControl\UserRoleMangementControl.ascx.designer.cs">
+      <DependentUpon>UserRoleMangementControl.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="_Files\CustomerDrawing\" />
+    <Folder Include="_Files\EndProductImage\" />
+    <Folder Include="_Files\EnquiryImage\" />
+    <Folder Include="_Files\MachTypeImage\" />
+    <Folder Include="_Files\ProductImage\" />
+    <Folder Include="_Files\RefineCAD\" />
+    <Folder Include="_Files\SampleImage\" />
+    <Folder Include="_Files\SurveyImage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SMSMasterPage.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VE.SMS.Common\VE.SMS.Common.csproj">
+      <Project>{DBC83B59-092F-440C-8A0F-F83BAB4CD161}</Project>
+      <Name>VE.SMS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VE.SMS.DAL\VE.SMS.DAL.csproj">
+      <Project>{93FCD46D-644E-48F5-97B6-06DC689F2C62}</Project>
+      <Name>VE.SMS.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SmsHandler.ashx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4904</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

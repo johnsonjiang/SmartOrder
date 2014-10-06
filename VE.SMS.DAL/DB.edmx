@@ -1,0 +1,2423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SMSDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SMSDbModelStoreContainer">
+          <EntitySet Name="ConfigGroup" EntityType="SMSDbModel.Store.ConfigGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConfigItem" EntityType="SMSDbModel.Store.ConfigItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Customer" EntityType="SMSDbModel.Store.Customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CustomerDrawing" EntityType="SMSDbModel.Store.CustomerDrawing" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Delivery" EntityType="SMSDbModel.Store.Delivery" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DeliveryItem" EntityType="SMSDbModel.Store.DeliveryItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EndProduct" EntityType="SMSDbModel.Store.EndProduct" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Enquiry" EntityType="SMSDbModel.Store.Enquiry" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FollowUp" EntityType="SMSDbModel.Store.FollowUp" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Footer" EntityType="SMSDbModel.Store.Footer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InstallLookup" EntityType="SMSDbModel.Store.InstallLookup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LineItem" EntityType="SMSDbModel.Store.LineItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Machining" EntityType="SMSDbModel.Store.Machining" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MachItem" EntityType="SMSDbModel.Store.MachItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MachLookUp" EntityType="SMSDbModel.Store.MachLookUp" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MachSummary" EntityType="SMSDbModel.Store.MachSummary" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Monitor" EntityType="SMSDbModel.Store.Monitor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Order" EntityType="SMSDbModel.Store.Order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Permission" EntityType="SMSDbModel.Store.Permission" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product" EntityType="SMSDbModel.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PurchaseOrder" EntityType="SMSDbModel.Store.PurchaseOrder" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PurchaseOrderItem" EntityType="SMSDbModel.Store.PurchaseOrderItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Quotation" EntityType="SMSDbModel.Store.Quotation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Receipt" EntityType="SMSDbModel.Store.Receipt" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Refine" EntityType="SMSDbModel.Store.Refine" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RefineItem" EntityType="SMSDbModel.Store.RefineItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="SMSDbModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RolePermission" EntityType="SMSDbModel.Store.RolePermission" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sample" EntityType="SMSDbModel.Store.Sample" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SampleProvid" EntityType="SMSDbModel.Store.SampleProvid" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Seed" EntityType="SMSDbModel.Store.Seed" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Settlement" EntityType="SMSDbModel.Store.Settlement" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Supplier" EntityType="SMSDbModel.Store.Supplier" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Survey" EntityType="SMSDbModel.Store.Survey" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SurveyItem" EntityType="SMSDbModel.Store.SurveyItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="SMSDbModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserRole" EntityType="SMSDbModel.Store.UserRole" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="ConfigGroup">
+          <Key>
+            <PropertyRef Name="ConfigGroup_Id" />
+          </Key>
+          <Property Name="ConfigGroup_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ConfigGroup_Name" Type="nvarchar" Nullable="false" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="ConfigItem">
+          <Key>
+            <PropertyRef Name="ConfigItem_Id" />
+          </Key>
+          <Property Name="ConfigItem_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ConfigGroup_Id" Type="int" Nullable="false" />
+          <Property Name="ConfigItem_Key" Type="nvarchar" MaxLength="64" />
+          <Property Name="ConfigItem_Value" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Customer_Id" />
+          </Key>
+          <Property Name="Customer_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerCompanyName" Type="nvarchar" MaxLength="64" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="64" />
+          <Property Name="Address" Type="nvarchar" MaxLength="256" />
+          <Property Name="Email" Type="nvarchar" MaxLength="64" />
+          <Property Name="Phone1" Type="nvarchar" MaxLength="32" />
+          <Property Name="Phone2" Type="nvarchar" MaxLength="32" />
+          <Property Name="QQ" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerOthers" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="CustomerDrawing">
+          <Key>
+            <PropertyRef Name="CustomerDrawing_Id" />
+          </Key>
+          <Property Name="CustomerDrawing_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerDrawing_Name" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerDrawing_Path" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerDrawing_Intro" Type="nvarchar" MaxLength="64" />
+          <Property Name="SourceType" Type="nvarchar" MaxLength="8" />
+          <Property Name="SourceNo" Type="nvarchar" MaxLength="64" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Delivery">
+          <Key>
+            <PropertyRef Name="Delivery_Id" />
+          </Key>
+          <Property Name="Delivery_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Delivery_No" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="OrderMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="Order_No" Type="nvarchar" MaxLength="64" />
+          <Property Name="MachList" Type="nvarchar" MaxLength="512" />
+          <Property Name="DeliveryCreateMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="Status" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerCompanyName" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerContactName" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerAddress" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerQQ" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerEmail" Type="nvarchar" MaxLength="128" />
+          <Property Name="CustomerPhone1" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerPhone2" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerOthers" Type="nvarchar" MaxLength="64" />
+          <Property Name="DeliveryType" Type="nvarchar" MaxLength="32" />
+          <Property Name="DeliveryIntro" Type="nvarchar" MaxLength="32" />
+          <Property Name="DeliveryDriverMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="DriverPhone" Type="nvarchar" MaxLength="32" />
+          <Property Name="CarType" Type="nvarchar" MaxLength="64" />
+          <Property Name="DeliveryToAddress" Type="nvarchar" MaxLength="256" />
+          <Property Name="ExpectedDeliveryDate" Type="datetime" />
+          <Property Name="RealDeliveryDate" Type="datetime" />
+          <Property Name="IsInstallProvided" Type="bit" Nullable="false" />
+          <Property Name="InstallType" Type="nvarchar" MaxLength="32" />
+          <Property Name="InstallIntro" Type="nvarchar" MaxLength="64" />
+          <Property Name="InstallMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="InstallPhone" Type="nvarchar" MaxLength="32" />
+          <Property Name="InstallDate" Type="datetime" />
+          <Property Name="InsteadOfSettlement" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="32" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="TotalAmount" Type="float" />
+          <Property Name="FirstAmount" Type="float" />
+          <Property Name="ReceivedAmount" Type="float" />
+          <Property Name="ReceivableIntro" Type="nvarchar" MaxLength="64" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="DeliveryItem">
+          <Key>
+            <PropertyRef Name="DeliveryItem_Id" />
+          </Key>
+          <Property Name="DeliveryItem_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Delivery_Id" Type="int" Nullable="false" />
+          <Property Name="Project" Type="nvarchar" MaxLength="64" />
+          <Property Name="Intro" Type="nvarchar" MaxLength="64" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="Spec" Type="nvarchar" MaxLength="128" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="8" />
+          <Property Name="UnitPrice" Type="int" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="64" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="32" />
+          <Property Name="CreatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EndProduct">
+          <Key>
+            <PropertyRef Name="EP_Id" />
+          </Key>
+          <Property Name="EP_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nvarchar" MaxLength="64" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="Catelog" Type="nvarchar" MaxLength="64" />
+          <Property Name="SubCatelog" Type="nvarchar" MaxLength="64" />
+          <Property Name="Long" Type="int" />
+          <Property Name="Width" Type="int" />
+          <Property Name="Deepth" Type="int" />
+          <Property Name="Material" Type="nvarchar" MaxLength="64" />
+          <Property Name="Price" Type="float" />
+          <Property Name="PurchasePrice" Type="float" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="64" />
+          <Property Name="Location" Type="nvarchar" MaxLength="64" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="64" />
+          <Property Name="ImgPth" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Enquiry">
+          <Key>
+            <PropertyRef Name="Enquiry_Id" />
+          </Key>
+          <Property Name="Enquiry_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Enquiry_No" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="EnqMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="256" />
+          <Property Name="ExpectedBeginDate" Type="datetime" />
+          <Property Name="ExpectedEndDate" Type="datetime" />
+          <Property Name="TimeLimitRemark" Type="nvarchar" MaxLength="256" />
+          <Property Name="Summary" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerCompanyName" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerContactName" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerAddress" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerQQ" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerEmail" Type="nvarchar" MaxLength="128" />
+          <Property Name="CustomerPhone1" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerPhone2" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerOthers" Type="nvarchar" MaxLength="64" />
+          <Property Name="EnquiryImgPath" Type="nvarchar" MaxLength="256" />
+          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="IsSampleProvidedToCustomer" Type="bit" Nullable="false" />
+          <Property Name="IsCustomerProvideSample" Type="bit" Nullable="false" />
+          <Property Name="IsCustomerProvideImage" Type="bit" Nullable="false" />
+          <Property Name="IsSurveyNeeded" Type="bit" Nullable="false" />
+          <Property Name="SurveyType" Type="nvarchar" MaxLength="32" />
+          <Property Name="SurveyIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsCADRefinementNeeded" Type="bit" Nullable="false" />
+          <Property Name="IsCADNeedCustomerConfirmation" Type="bit" Nullable="false" />
+          <Property Name="CADRefinementIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="DeliveryType" Type="nvarchar" MaxLength="32" />
+          <Property Name="DeliveryIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="DeliveryToAddress" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsInstallProvided" Type="bit" Nullable="false" />
+          <Property Name="InstallType" Type="nvarchar" MaxLength="32" />
+          <Property Name="InstallIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="32" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="FollowUp">
+          <Key>
+            <PropertyRef Name="FollowUp_Id" />
+          </Key>
+          <Property Name="FollowUp_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FollowUp_Date" Type="datetime" />
+          <Property Name="FollowUp_Man" Type="nvarchar" MaxLength="32" />
+          <Property Name="FollowUp_Notes" Type="nvarchar" MaxLength="256" />
+          <Property Name="SourceType" Type="nvarchar" MaxLength="8" />
+          <Property Name="SourceNo" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Footer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Intro" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="SourceNo" Type="nvarchar" MaxLength="32" />
+          <Property Name="SourceType" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="InstallLookup">
+          <Key>
+            <PropertyRef Name="Install_Id" />
+          </Key>
+          <Property Name="Install_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nvarchar" MaxLength="32" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="PriceM" Type="float" />
+          <Property Name="PriceM2" Type="float" />
+          <Property Name="PriceOther" Type="float" />
+          <Property Name="Intro" Type="nvarchar" MaxLength="64" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LineItem">
+          <Key>
+            <PropertyRef Name="LineItem_Id" />
+          </Key>
+          <Property Name="LineItem_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SourceId" Type="int" Nullable="false" />
+          <Property Name="SourceType" Type="nvarchar" Nullable="false" MaxLength="8" />
+          <Property Name="Project" Type="nvarchar" MaxLength="64" />
+          <Property Name="Intro" Type="nvarchar" MaxLength="64" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="Spec" Type="nvarchar" MaxLength="128" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="8" />
+          <Property Name="UnitPrice" Type="float" />
+          <Property Name="Quantity" Type="float" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="64" />
+          <Property Name="OriginNo" Type="nvarchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="Machining">
+          <Key>
+            <PropertyRef Name="Mach_Id" />
+          </Key>
+          <Property Name="Mach_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Mach_No" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="SourceType" Type="nvarchar" MaxLength="8" />
+          <Property Name="SourceNo" Type="nvarchar" MaxLength="32" />
+          <Property Name="Status" Type="nvarchar" MaxLength="32" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="MachCreateMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="ProcessCreateMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="SalesMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="RefineMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="SurveyMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="MachMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="ApplyDate" Type="datetime" />
+          <Property Name="ExpectedCompleteDate" Type="datetime" />
+          <Property Name="CompleteDate" Type="datetime" />
+          <Property Name="ExpectedDeliveryDate" Type="datetime" />
+          <Property Name="ExpectedInstallDate" Type="datetime" />
+          <Property Name="MachIntro" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerCompanyName" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerContactName" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerAddress" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerQQ" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerEmail" Type="nvarchar" MaxLength="128" />
+          <Property Name="CustomerPhone1" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerPhone2" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerOthers" Type="nvarchar" MaxLength="64" />
+          <Property Name="IsRefineInstead" Type="bit" Nullable="false" />
+          <Property Name="RefineNo" Type="nvarchar" MaxLength="32" />
+          <Property Name="InsteadIntro" Type="nvarchar" MaxLength="32" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="MachItem">
+          <Key>
+            <PropertyRef Name="MI_Id" />
+          </Key>
+          <Property Name="MI_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Mach_Id" Type="int" Nullable="false" />
+          <Property Name="Intro" Type="nvarchar" MaxLength="32" />
+          <Property Name="Product_Code" Type="nvarchar" MaxLength="64" />
+          <Property Name="Code" Type="nvarchar" MaxLength="64" />
+          <Property Name="Long" Type="int" Nullable="false" />
+          <Property Name="Width" Type="int" Nullable="false" />
+          <Property Name="Deepth" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Square" Type="float" />
+          <Property Name="MachIntro" Type="nvarchar" MaxLength="32" />
+          <Property Name="LongMachList" Type="nvarchar" MaxLength="512" />
+          <Property Name="WidthMachList" Type="nvarchar" MaxLength="512" />
+          <Property Name="DeepthMachList" Type="nvarchar" MaxLength="512" />
+        </EntityType>
+        <EntityType Name="MachLookUp">
+          <Key>
+            <PropertyRef Name="Mach_Id" />
+          </Key>
+          <Property Name="Mach_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nvarchar" MaxLength="32" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="PriceM" Type="float" />
+          <Property Name="PriceM2" Type="float" />
+          <Property Name="PriceOther" Type="float" />
+          <Property Name="MachIdentity" Type="nvarchar" MaxLength="64" />
+          <Property Name="IdentityImgPath" Type="nvarchar" MaxLength="256" />
+          <Property Name="Intro" Type="nvarchar" MaxLength="64" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MachSummary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MachId" Type="int" Nullable="false" />
+          <Property Name="MachIntro" Type="nvarchar" MaxLength="64" />
+          <Property Name="MachName" Type="nvarchar" MaxLength="64" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="8" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="256" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Monitor">
+          <Key>
+            <PropertyRef Name="MonitorEn" />
+          </Key>
+          <Property Name="MonitorEn" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MonitorV" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Order_Id" />
+          </Key>
+          <Property Name="Order_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Order_No" Type="nvarchar" MaxLength="64" />
+          <Property Name="SourceType" Type="nvarchar" MaxLength="8" />
+          <Property Name="SourceNo" Type="nvarchar" MaxLength="64" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="OrderMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="Status" Type="nvarchar" MaxLength="64" />
+          <Property Name="OrderIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerCompanyName" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerContactName" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerAddress" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerQQ" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerEmail" Type="nvarchar" MaxLength="128" />
+          <Property Name="CustomerPhone1" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerPhone2" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerOthers" Type="nvarchar" MaxLength="64" />
+          <Property Name="IsSampleProvidedToCustomer" Type="bit" Nullable="false" />
+          <Property Name="IsCustomerProvideSample" Type="bit" Nullable="false" />
+          <Property Name="IsCustomerProvideImage" Type="bit" Nullable="false" />
+          <Property Name="IsSurveyNeeded" Type="bit" Nullable="false" />
+          <Property Name="SurveyType" Type="nvarchar" MaxLength="32" />
+          <Property Name="SurveyIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsCADRefinementNeeded" Type="bit" Nullable="false" />
+          <Property Name="CADRefinementIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsCADNeedCustomerConfirmation" Type="bit" Nullable="false" />
+          <Property Name="DeliveryType" Type="nvarchar" MaxLength="32" />
+          <Property Name="DeliveryIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="DeliveryToAddress" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsInstallProvided" Type="bit" Nullable="false" />
+          <Property Name="InstallType" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="InstallIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="32" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="EnqNo" Type="nvarchar" MaxLength="64" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="Permission_Id" />
+          </Key>
+          <Property Name="Permission_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Permission_Name" Type="nvarchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Product_Id" />
+          </Key>
+          <Property Name="Product_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Product_Code" Type="nvarchar" MaxLength="64" />
+          <Property Name="Product_Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="HuangliaoCode" Type="nvarchar" MaxLength="64" />
+          <Property Name="JiaCode" Type="nvarchar" MaxLength="64" />
+          <Property Name="PianCode" Type="nvarchar" MaxLength="64" />
+          <Property Name="Long" Type="int" />
+          <Property Name="Width" Type="int" />
+          <Property Name="Deep" Type="int" />
+          <Property Name="Color" Type="nvarchar" MaxLength="64" />
+          <Property Name="Location" Type="nvarchar" MaxLength="64" />
+          <Property Name="Texure" Type="nvarchar" MaxLength="64" />
+          <Property Name="QuantityM2" Type="real" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="64" />
+          <Property Name="PurchasePrice" Type="float" />
+          <Property Name="PriceM" Type="real" />
+          <Property Name="PriceM2" Type="real" />
+          <Property Name="PriceOther" Type="float" />
+          <Property Name="Alias1" Type="nvarchar" MaxLength="64" />
+          <Property Name="Alias2" Type="nvarchar" MaxLength="64" />
+          <Property Name="SampleCodes" Type="nvarchar" MaxLength="256" />
+          <Property Name="Intro" Type="nvarchar" MaxLength="64" />
+          <Property Name="ImgPath" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="PurchaseOrder">
+          <Key>
+            <PropertyRef Name="Purchase_Id" />
+          </Key>
+          <Property Name="Purchase_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Purchase_No" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="SourceNo" Type="nvarchar" MaxLength="64" />
+          <Property Name="SourceType" Type="nvarchar" MaxLength="8" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ApplyPurchaseDate" Type="datetime" />
+          <Property Name="ExpectedCompleteDate" Type="datetime" />
+          <Property Name="EnqOrdMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="MachiningCreateMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="PurchaseMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="PurchaseApplyMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="ApproveMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="MachTableCreateMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="Status" Type="nvarchar" MaxLength="32" />
+          <Property Name="PurchaseIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="32" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="PurchaseOrderItem">
+          <Key>
+            <PropertyRef Name="PurchaseOrderItem_Id" />
+          </Key>
+          <Property Name="PurchaseOrderItem_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PO_Id" Type="int" Nullable="false" />
+          <Property Name="Intro" Type="nvarchar" MaxLength="32" />
+          <Property Name="Product_Code" Type="nvarchar" MaxLength="64" />
+          <Property Name="Code" Type="nvarchar" MaxLength="64" />
+          <Property Name="Long" Type="int" Nullable="false" />
+          <Property Name="Width" Type="int" Nullable="false" />
+          <Property Name="Deepth" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Square" Type="float" />
+        </EntityType>
+        <EntityType Name="Quotation">
+          <Key>
+            <PropertyRef Name="Quotation_Id" />
+          </Key>
+          <Property Name="Quotation_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SourceType" Type="nvarchar" MaxLength="8" />
+          <Property Name="SourceNo" Type="nvarchar" MaxLength="64" />
+          <Property Name="Quotation_No" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="EnqOrdMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="QuotationMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="Status" Type="nvarchar" MaxLength="32" />
+          <Property Name="QuotationIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerCompanyName" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerContactName" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerAddress" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerQQ" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerEmail" Type="nvarchar" MaxLength="128" />
+          <Property Name="CustomerPhone1" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerPhone2" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerOthers" Type="nvarchar" MaxLength="64" />
+          <Property Name="IsSampleProvidedToCustomer" Type="bit" Nullable="false" />
+          <Property Name="IsCustomerProvideSample" Type="bit" Nullable="false" />
+          <Property Name="IsCustomerProvideImage" Type="bit" Nullable="false" />
+          <Property Name="IsSurveyNeeded" Type="bit" Nullable="false" />
+          <Property Name="SurveyType" Type="nvarchar" MaxLength="32" />
+          <Property Name="SurveyIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsCADRefinementNeeded" Type="bit" Nullable="false" />
+          <Property Name="CADRefinementIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsCADNeedCustomerConfirmation" Type="bit" Nullable="false" />
+          <Property Name="DeliveryType" Type="nvarchar" MaxLength="32" />
+          <Property Name="DeliveryIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="DeliveryToAddress" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsInstallProvided" Type="bit" Nullable="false" />
+          <Property Name="InstallType" Type="nvarchar" MaxLength="32" />
+          <Property Name="InstallIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="32" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="EnqNo" Type="nvarchar" MaxLength="64" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Receipt">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SourceType" Type="nvarchar" MaxLength="8" />
+          <Property Name="SourceNo" Type="nvarchar" MaxLength="32" />
+          <Property Name="ReceivedDate" Type="datetime" Nullable="false" />
+          <Property Name="ReceivedAmount" Type="float" />
+          <Property Name="Man" Type="nvarchar" MaxLength="32" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Refine">
+          <Key>
+            <PropertyRef Name="Refine_Id" />
+          </Key>
+          <Property Name="Refine_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Refine_No" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="SourceType" Type="nvarchar" MaxLength="8" />
+          <Property Name="SourceNo" Type="nvarchar" MaxLength="64" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="EnqOrdMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="RefineMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="RequestCompleteDate" Type="datetime" />
+          <Property Name="Status" Type="nvarchar" MaxLength="32" />
+          <Property Name="NeedCustomerConfirm" Type="bit" Nullable="false" />
+          <Property Name="CustomerConfirmIntro" Type="nvarchar" MaxLength="64" />
+          <Property Name="IncludeMaching" Type="bit" Nullable="false" />
+          <Property Name="NeedApprove" Type="bit" Nullable="false" />
+          <Property Name="RefineIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerCompanyName" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerContactName" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerAddress" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerQQ" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerEmail" Type="nvarchar" MaxLength="128" />
+          <Property Name="CustomerPhone1" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerPhone2" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerOthers" Type="nvarchar" MaxLength="64" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="32" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="EnqNo" Type="nvarchar" MaxLength="64" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="RefineItem">
+          <Key>
+            <PropertyRef Name="RefineItem_Id" />
+          </Key>
+          <Property Name="RefineItem_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RefineFilePath" Type="nvarchar" MaxLength="256" />
+          <Property Name="RefineItemDate" Type="datetime" />
+          <Property Name="RefineFileName" Type="nvarchar" MaxLength="256" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="32" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="Refine_Id" Type="int" Nullable="false" />
+          <Property Name="Intro" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Role_Id" />
+          </Key>
+          <Property Name="Role_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Role_Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolePermission">
+          <Key>
+            <PropertyRef Name="RolePermission_Id" />
+          </Key>
+          <Property Name="RolePermission_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Role_Id" Type="int" Nullable="false" />
+          <Property Name="Permission_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sample">
+          <Key>
+            <PropertyRef Name="Sample_Id" />
+          </Key>
+          <Property Name="Sample_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialCode" Type="nvarchar" MaxLength="64" />
+          <Property Name="MaterialName" Type="nvarchar" MaxLength="64" />
+          <Property Name="SampleCode" Type="nvarchar" MaxLength="64" />
+          <Property Name="SampleTexure" Type="nvarchar" MaxLength="64" />
+          <Property Name="SampleLong" Type="int" />
+          <Property Name="SampleWidth" Type="int" />
+          <Property Name="SampleDeep" Type="int" />
+          <Property Name="SampleColor" Type="nvarchar" MaxLength="64" />
+          <Property Name="SampleLocation" Type="nvarchar" MaxLength="64" />
+          <Property Name="SampleSquare" Type="float" />
+          <Property Name="Supplier" Type="nvarchar" MaxLength="64" />
+          <Property Name="PurchasePrice" Type="float" />
+          <Property Name="PriceM" Type="float" />
+          <Property Name="PriceM2" Type="float" />
+          <Property Name="Alias1" Type="nvarchar" MaxLength="64" />
+          <Property Name="Alias2" Type="nvarchar" MaxLength="64" />
+          <Property Name="SampleIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="ImgPath" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="SampleProvid">
+          <Key>
+            <PropertyRef Name="SampleToCustomer_Id" />
+          </Key>
+          <Property Name="SampleToCustomer_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SampleDirection" Type="nvarchar" MaxLength="8" />
+          <Property Name="SampleName" Type="nvarchar" MaxLength="64" />
+          <Property Name="SampleIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="SourceType" Type="nvarchar" MaxLength="8" />
+          <Property Name="SourceNo" Type="nvarchar" MaxLength="64" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="32" />
+          <Property Name="CreatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Seed">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TableName" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="CurrentNo" Type="int" Nullable="false" />
+          <Property Name="Date" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Settlement">
+          <Key>
+            <PropertyRef Name="St_Id" />
+          </Key>
+          <Property Name="St_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="St_No" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="DeliveryDate" Type="datetime" />
+          <Property Name="StMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="SourceType" Type="nvarchar" MaxLength="8" />
+          <Property Name="SourceNo" Type="nvarchar" MaxLength="32" />
+          <Property Name="Status" Type="nvarchar" MaxLength="32" />
+          <Property Name="DeliveryList" Type="nvarchar" MaxLength="512" />
+          <Property Name="StLocation" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerCompanyName" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerContactName" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerAddress" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerQQ" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerEmail" Type="nvarchar" MaxLength="128" />
+          <Property Name="CustomerPhone1" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerPhone2" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerOthers" Type="nvarchar" MaxLength="64" />
+          <Property Name="TotalAmount" Type="float" />
+          <Property Name="FirstAmount" Type="float" />
+          <Property Name="AmountReceived" Type="float" />
+          <Property Name="ReceivableIntro" Type="nvarchar" MaxLength="32" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="Supplier_Id" />
+          </Key>
+          <Property Name="Supplier_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Supplier_Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="Supplier_ContactName" Type="nvarchar" MaxLength="64" />
+          <Property Name="Supplier_Phone" Type="nvarchar" MaxLength="32" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Survey">
+          <Key>
+            <PropertyRef Name="Survey_Id" />
+          </Key>
+          <Property Name="Survey_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Survey_No" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="SourceType" Type="nvarchar" MaxLength="8" />
+          <Property Name="SourceNo" Type="nvarchar" MaxLength="64" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="EnqOrdMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="ExpectedSurveyDate" Type="datetime" />
+          <Property Name="OnSiteContactName" Type="nvarchar" MaxLength="32" />
+          <Property Name="OnSiteContactPhone" Type="nvarchar" MaxLength="64" />
+          <Property Name="SurveyIntro" Type="nvarchar" MaxLength="256" />
+          <Property Name="Status" Type="nvarchar" MaxLength="64" />
+          <Property Name="SurveyMan" Type="nvarchar" MaxLength="32" />
+          <Property Name="GoodsBring" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerCompanyName" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerContactName" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerAddress" Type="nvarchar" MaxLength="256" />
+          <Property Name="CustomerQQ" Type="nvarchar" MaxLength="64" />
+          <Property Name="CustomerEmail" Type="nvarchar" MaxLength="128" />
+          <Property Name="CustomerPhone1" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerPhone2" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerOthers" Type="nvarchar" MaxLength="64" />
+          <Property Name="SurveyImageName" Type="nvarchar" MaxLength="256" />
+          <Property Name="SurveyImagePath" Type="nvarchar" MaxLength="256" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="32" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="EnqNo" Type="nvarchar" MaxLength="64" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="SurveyItem">
+          <Key>
+            <PropertyRef Name="SurveyItem_Id" />
+          </Key>
+          <Property Name="SurveyItem_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Project" Type="nvarchar" MaxLength="64" />
+          <Property Name="Intro" Type="nvarchar" MaxLength="64" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="Spec" Type="nvarchar" MaxLength="128" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="8" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="64" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="32" />
+          <Property Name="CreatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="32" />
+          <Property Name="RealName" Type="nvarchar" MaxLength="32" />
+          <Property Name="Password" Type="nvarchar" MaxLength="32" />
+          <Property Name="Phone1" Type="nvarchar" MaxLength="32" />
+          <Property Name="Phone2" Type="nvarchar" MaxLength="32" />
+          <Property Name="Department" Type="nvarchar" MaxLength="32" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRole_Id" />
+          </Key>
+          <Property Name="UserRole_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="User_Id" Type="int" Nullable="false" />
+          <Property Name="Role_Id" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <Function Name="Proce_GetProductByCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Product_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Product_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="HuangliaoCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="JiaCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="PianCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Location" Type="nvarchar" Mode="In" />
+          <Parameter Name="Color" Type="nvarchar" Mode="In" />
+          <Parameter Name="Texure" Type="nvarchar" Mode="In" />
+          <Parameter Name="SupplierName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Long" Type="int" Mode="In" />
+          <Parameter Name="Width" Type="int" Mode="In" />
+          <Parameter Name="Deep" Type="int" Mode="In" />
+          <Parameter Name="PriceM" Type="real" Mode="In" />
+          <Parameter Name="PriceM2" Type="real" Mode="In" />
+        </Function>
+        <Function Name="Proce_GetProductByHuang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Product_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Product_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="HuangliaoCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="JiaCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="PianCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Location" Type="nvarchar" Mode="In" />
+          <Parameter Name="Color" Type="nvarchar" Mode="In" />
+          <Parameter Name="Texure" Type="nvarchar" Mode="In" />
+          <Parameter Name="SupplierName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Long" Type="int" Mode="In" />
+          <Parameter Name="Width" Type="int" Mode="In" />
+          <Parameter Name="Deep" Type="int" Mode="In" />
+          <Parameter Name="PriceM" Type="real" Mode="In" />
+          <Parameter Name="PriceM2" Type="real" Mode="In" />
+        </Function>
+        <Function Name="Proce_GetProductByJia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Product_Code" Type="nvarchar" Mode="In" />
+          <Parameter Name="Product_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="HuangliaoCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="JiaCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="PianCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Location" Type="nvarchar" Mode="In" />
+          <Parameter Name="Color" Type="nvarchar" Mode="In" />
+          <Parameter Name="Texure" Type="nvarchar" Mode="In" />
+          <Parameter Name="SupplierName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Long" Type="int" Mode="In" />
+          <Parameter Name="Width" Type="int" Mode="In" />
+          <Parameter Name="Deep" Type="int" Mode="In" />
+          <Parameter Name="PriceM" Type="real" Mode="In" />
+          <Parameter Name="PriceM2" Type="real" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SMSDbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SMSDbEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="Proce_GetProductByJia" ReturnType="Collection(SMSDbModel.Proce_GetProductByJia_Result)">
+            <Parameter Name="Product_Code" Mode="In" Type="String" />
+            <Parameter Name="Product_Name" Mode="In" Type="String" />
+            <Parameter Name="HuangliaoCode" Mode="In" Type="String" />
+            <Parameter Name="JiaCode" Mode="In" Type="String" />
+            <Parameter Name="PianCode" Mode="In" Type="String" />
+            <Parameter Name="Location" Mode="In" Type="String" />
+            <Parameter Name="Color" Mode="In" Type="String" />
+            <Parameter Name="Texure" Mode="In" Type="String" />
+            <Parameter Name="SupplierName" Mode="In" Type="String" />
+            <Parameter Name="Long" Mode="In" Type="Int32" />
+            <Parameter Name="Width" Mode="In" Type="Int32" />
+            <Parameter Name="Deep" Mode="In" Type="Int32" />
+            <Parameter Name="PriceM" Mode="In" Type="Single" />
+            <Parameter Name="PriceM2" Mode="In" Type="Single" />
+          </FunctionImport>
+          <FunctionImport Name="Proce_GetProductByCode" ReturnType="Collection(SMSDbModel.Proce_GetProductByCode_Result)">
+            <Parameter Name="Product_Code" Mode="In" Type="String" />
+            <Parameter Name="Product_Name" Mode="In" Type="String" />
+            <Parameter Name="HuangliaoCode" Mode="In" Type="String" />
+            <Parameter Name="JiaCode" Mode="In" Type="String" />
+            <Parameter Name="PianCode" Mode="In" Type="String" />
+            <Parameter Name="Location" Mode="In" Type="String" />
+            <Parameter Name="Color" Mode="In" Type="String" />
+            <Parameter Name="Texure" Mode="In" Type="String" />
+            <Parameter Name="SupplierName" Mode="In" Type="String" />
+            <Parameter Name="Long" Mode="In" Type="Int32" />
+            <Parameter Name="Width" Mode="In" Type="Int32" />
+            <Parameter Name="Deep" Mode="In" Type="Int32" />
+            <Parameter Name="PriceM" Mode="In" Type="Single" />
+            <Parameter Name="PriceM2" Mode="In" Type="Single" />
+          </FunctionImport>
+          <FunctionImport Name="Proce_GetProductByHuang" ReturnType="Collection(SMSDbModel.Proce_GetProductByHuang_Result)">
+            <Parameter Name="Product_Code" Mode="In" Type="String" />
+            <Parameter Name="Product_Name" Mode="In" Type="String" />
+            <Parameter Name="HuangliaoCode" Mode="In" Type="String" />
+            <Parameter Name="JiaCode" Mode="In" Type="String" />
+            <Parameter Name="PianCode" Mode="In" Type="String" />
+            <Parameter Name="Location" Mode="In" Type="String" />
+            <Parameter Name="Color" Mode="In" Type="String" />
+            <Parameter Name="Texure" Mode="In" Type="String" />
+            <Parameter Name="SupplierName" Mode="In" Type="String" />
+            <Parameter Name="Long" Mode="In" Type="Int32" />
+            <Parameter Name="Width" Mode="In" Type="Int32" />
+            <Parameter Name="Deep" Mode="In" Type="Int32" />
+            <Parameter Name="PriceM" Mode="In" Type="Single" />
+            <Parameter Name="PriceM2" Mode="In" Type="Single" />
+          </FunctionImport>
+          <EntitySet Name="ConfigGroup" EntityType="SMSDbModel.ConfigGroup" />
+          <EntitySet Name="ConfigItem" EntityType="SMSDbModel.ConfigItem" />
+          <EntitySet Name="Customer" EntityType="SMSDbModel.Customer" />
+          <EntitySet Name="CustomerDrawing" EntityType="SMSDbModel.CustomerDrawing" />
+          <EntitySet Name="Delivery" EntityType="SMSDbModel.Delivery" />
+          <EntitySet Name="DeliveryItem" EntityType="SMSDbModel.DeliveryItem" />
+          <EntitySet Name="EndProduct" EntityType="SMSDbModel.EndProduct" />
+          <EntitySet Name="Enquiry" EntityType="SMSDbModel.Enquiry" />
+          <EntitySet Name="FollowUp" EntityType="SMSDbModel.FollowUp" />
+          <EntitySet Name="Footer" EntityType="SMSDbModel.Footer" />
+          <EntitySet Name="InstallLookup" EntityType="SMSDbModel.InstallLookup" />
+          <EntitySet Name="Machining" EntityType="SMSDbModel.Machining" />
+          <EntitySet Name="MachItem" EntityType="SMSDbModel.MachItem" />
+          <EntitySet Name="MachLookUp" EntityType="SMSDbModel.MachLookUp" />
+          <EntitySet Name="MachSummary" EntityType="SMSDbModel.MachSummary" />
+          <EntitySet Name="Order" EntityType="SMSDbModel.Order" />
+          <EntitySet Name="Permission" EntityType="SMSDbModel.Permission" />
+          <EntitySet Name="Product" EntityType="SMSDbModel.Product" />
+          <EntitySet Name="PurchaseOrder" EntityType="SMSDbModel.PurchaseOrder" />
+          <EntitySet Name="PurchaseOrderItem" EntityType="SMSDbModel.PurchaseOrderItem" />
+          <EntitySet Name="Quotation" EntityType="SMSDbModel.Quotation" />
+          <EntitySet Name="Receipt" EntityType="SMSDbModel.Receipt" />
+          <EntitySet Name="Refine" EntityType="SMSDbModel.Refine" />
+          <EntitySet Name="RefineItem" EntityType="SMSDbModel.RefineItem" />
+          <EntitySet Name="Role" EntityType="SMSDbModel.Role" />
+          <EntitySet Name="RolePermission" EntityType="SMSDbModel.RolePermission" />
+          <EntitySet Name="Sample" EntityType="SMSDbModel.Sample" />
+          <EntitySet Name="SampleProvid" EntityType="SMSDbModel.SampleProvid" />
+          <EntitySet Name="Seed" EntityType="SMSDbModel.Seed" />
+          <EntitySet Name="Settlement" EntityType="SMSDbModel.Settlement" />
+          <EntitySet Name="Supplier" EntityType="SMSDbModel.Supplier" />
+          <EntitySet Name="Survey" EntityType="SMSDbModel.Survey" />
+          <EntitySet Name="SurveyItem" EntityType="SMSDbModel.SurveyItem" />
+          <EntitySet Name="User" EntityType="SMSDbModel.User" />
+          <EntitySet Name="UserRole" EntityType="SMSDbModel.UserRole" />
+          <EntitySet Name="LineItem" EntityType="SMSDbModel.LineItem" />
+          <EntitySet Name="Monitor" EntityType="SMSDbModel.Monitor" />
+          </EntityContainer>
+        <ComplexType Name="Proce_GetProductByCode_Result">
+          <Property Type="String" Name="Product_Name" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="Product_Code" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="Color" Nullable="true" MaxLength="64" />
+          <Property Type="Single" Name="PriceM" Nullable="true" />
+          <Property Type="Single" Name="PriceM2" Nullable="true" />
+          <Property Type="Double" Name="QuantityM2" Nullable="true" />
+          <Property Type="String" Name="Location" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="SupplierName" Nullable="true" MaxLength="64" />
+        </ComplexType>
+        <ComplexType Name="Proce_GetProductByHuang_Result">
+          <Property Type="String" Name="Product_Name" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="Product_Code" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="Color" Nullable="true" MaxLength="64" />
+          <Property Type="Single" Name="PriceM" Nullable="true" />
+          <Property Type="Single" Name="PriceM2" Nullable="true" />
+          <Property Type="String" Name="HuangliaoCode" Nullable="true" MaxLength="64" />
+          <Property Type="Double" Name="QuantityM2" Nullable="true" />
+          <Property Type="String" Name="Location" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="SupplierName" Nullable="true" MaxLength="64" />
+        </ComplexType>
+        <ComplexType Name="Proce_GetProductByJia_Result">
+          <Property Type="String" Name="Product_Name" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="Product_Code" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="Color" Nullable="true" MaxLength="64" />
+          <Property Type="Single" Name="PriceM" Nullable="true" />
+          <Property Type="Single" Name="PriceM2" Nullable="true" />
+          <Property Type="String" Name="HuangliaoCode" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="JiaCode" Nullable="true" MaxLength="64" />
+          <Property Type="Double" Name="QuantityM2" Nullable="true" />
+          <Property Type="String" Name="Location" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="SupplierName" Nullable="true" MaxLength="64" />
+        </ComplexType>
+        <EntityType Name="ConfigGroup">
+          <Key>
+            <PropertyRef Name="ConfigGroup_Id" />
+          </Key>
+          <Property Type="Int32" Name="ConfigGroup_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ConfigGroup_Name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ConfigItem">
+          <Key>
+            <PropertyRef Name="ConfigItem_Id" />
+          </Key>
+          <Property Type="Int32" Name="ConfigItem_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ConfigGroup_Id" Nullable="false" />
+          <Property Type="String" Name="ConfigItem_Key" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ConfigItem_Value" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsDefault" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Customer_Id" />
+          </Key>
+          <Property Type="Int32" Name="Customer_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CustomerCompanyName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone1" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone2" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QQ" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerOthers" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CustomerDrawing">
+          <Key>
+            <PropertyRef Name="CustomerDrawing_Id" />
+          </Key>
+          <Property Type="Int32" Name="CustomerDrawing_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CustomerDrawing_Name" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerDrawing_Path" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerDrawing_Intro" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceType" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceNo" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" />
+          <Property Type="String" Name="CreatedBy" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Delivery">
+          <Key>
+            <PropertyRef Name="Delivery_Id" />
+          </Key>
+          <Property Type="Int32" Name="Delivery_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Delivery_No" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="OrderMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Order_No" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachList" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliveryCreateMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerCompanyName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerContactName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerAddress" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerQQ" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerEmail" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone1" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone2" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerOthers" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliveryType" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliveryIntro" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliveryDriverMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DriverPhone" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CarType" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliveryToAddress" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ExpectedDeliveryDate" />
+          <Property Type="DateTime" Name="RealDeliveryDate" />
+          <Property Type="Boolean" Name="IsInstallProvided" Nullable="false" />
+          <Property Type="String" Name="InstallType" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InstallIntro" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InstallMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InstallPhone" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="InstallDate" />
+          <Property Type="Boolean" Name="InsteadOfSettlement" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" />
+          <Property Type="Double" Name="TotalAmount" />
+          <Property Type="Double" Name="FirstAmount" />
+          <Property Type="Double" Name="ReceivedAmount" />
+          <Property Type="String" Name="ReceivableIntro" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="DeliveryItem">
+          <Key>
+            <PropertyRef Name="DeliveryItem_Id" />
+          </Key>
+          <Property Type="Int32" Name="DeliveryItem_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Delivery_Id" Nullable="false" />
+          <Property Type="String" Name="Project" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Intro" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Spec" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Unit" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UnitPrice" />
+          <Property Type="Int32" Name="Quantity" />
+          <Property Type="String" Name="Remark" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" />
+        </EntityType>
+        <EntityType Name="EndProduct">
+          <Key>
+            <PropertyRef Name="EP_Id" />
+          </Key>
+          <Property Type="Int32" Name="EP_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Catelog" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SubCatelog" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Long" />
+          <Property Type="Int32" Name="Width" />
+          <Property Type="Int32" Name="Deepth" />
+          <Property Type="String" Name="Material" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Price" />
+          <Property Type="Double" Name="PurchasePrice" />
+          <Property Type="Int32" Name="Qty" />
+          <Property Type="String" Name="SupplierName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Location" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImgPth" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Enquiry">
+          <Key>
+            <PropertyRef Name="Enquiry_Id" />
+          </Key>
+          <Property Type="Int32" Name="Enquiry_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Enquiry_No" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="EnqMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ExpectedBeginDate" />
+          <Property Type="DateTime" Name="ExpectedEndDate" />
+          <Property Type="String" Name="TimeLimitRemark" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Summary" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerCompanyName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerContactName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerAddress" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerQQ" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerEmail" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone1" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone2" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerOthers" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EnquiryImgPath" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsSampleProvidedToCustomer" Nullable="false" />
+          <Property Type="Boolean" Name="IsCustomerProvideSample" Nullable="false" />
+          <Property Type="Boolean" Name="IsCustomerProvideImage" Nullable="false" />
+          <Property Type="Boolean" Name="IsSurveyNeeded" Nullable="false" />
+          <Property Type="String" Name="SurveyType" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SurveyIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsCADRefinementNeeded" Nullable="false" />
+          <Property Type="Boolean" Name="IsCADNeedCustomerConfirmation" Nullable="false" />
+          <Property Type="String" Name="CADRefinementIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliveryType" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliveryIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliveryToAddress" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsInstallProvided" Nullable="false" />
+          <Property Type="String" Name="InstallType" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InstallIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="FollowUp">
+          <Key>
+            <PropertyRef Name="FollowUp_Id" />
+          </Key>
+          <Property Type="Int32" Name="FollowUp_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="FollowUp_Date" />
+          <Property Type="String" Name="FollowUp_Man" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FollowUp_Notes" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceType" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceNo" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Footer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Intro" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceNo" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceType" MaxLength="8" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="InstallLookup">
+          <Key>
+            <PropertyRef Name="Install_Id" />
+          </Key>
+          <Property Type="Int32" Name="Install_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="PriceM" />
+          <Property Type="Double" Name="PriceM2" />
+          <Property Type="Double" Name="PriceOther" />
+          <Property Type="String" Name="Intro" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Machining">
+          <Key>
+            <PropertyRef Name="Mach_Id" />
+          </Key>
+          <Property Type="Int32" Name="Mach_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Mach_No" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceType" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceNo" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="MachCreateMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProcessCreateMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SalesMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RefineMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SurveyMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ApplyDate" />
+          <Property Type="DateTime" Name="ExpectedCompleteDate" />
+          <Property Type="DateTime" Name="CompleteDate" />
+          <Property Type="DateTime" Name="ExpectedDeliveryDate" />
+          <Property Type="DateTime" Name="ExpectedInstallDate" />
+          <Property Type="String" Name="MachIntro" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerCompanyName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerContactName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerAddress" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerQQ" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerEmail" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone1" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone2" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerOthers" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsRefineInstead" Nullable="false" />
+          <Property Type="String" Name="RefineNo" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InsteadIntro" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="MachItem">
+          <Key>
+            <PropertyRef Name="MI_Id" />
+          </Key>
+          <Property Type="Int32" Name="MI_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Mach_Id" Nullable="false" />
+          <Property Type="String" Name="Intro" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Product_Code" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Code" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Long" Nullable="false" />
+          <Property Type="Int32" Name="Width" Nullable="false" />
+          <Property Type="Int32" Name="Deepth" Nullable="false" />
+          <Property Type="Int32" Name="Quantity" />
+          <Property Type="Double" Name="Square" />
+          <Property Type="String" Name="MachIntro" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LongMachList" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WidthMachList" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeepthMachList" MaxLength="512" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MachLookUp">
+          <Key>
+            <PropertyRef Name="Mach_Id" />
+          </Key>
+          <Property Type="Int32" Name="Mach_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="PriceM" />
+          <Property Type="Double" Name="PriceM2" />
+          <Property Type="Double" Name="PriceOther" />
+          <Property Type="String" Name="MachIdentity" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IdentityImgPath" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Intro" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MachSummary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="MachId" Nullable="false" />
+          <Property Type="String" Name="MachIntro" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Unit" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Qty" />
+          <Property Type="String" Name="ImagePath" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Order_Id" />
+          </Key>
+          <Property Type="Int32" Name="Order_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Order_No" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceType" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceNo" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="OrderMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OrderIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerCompanyName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerContactName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerAddress" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerQQ" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerEmail" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone1" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone2" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerOthers" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsSampleProvidedToCustomer" Nullable="false" />
+          <Property Type="Boolean" Name="IsCustomerProvideSample" Nullable="false" />
+          <Property Type="Boolean" Name="IsCustomerProvideImage" Nullable="false" />
+          <Property Type="Boolean" Name="IsSurveyNeeded" Nullable="false" />
+          <Property Type="String" Name="SurveyType" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SurveyIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsCADRefinementNeeded" Nullable="false" />
+          <Property Type="String" Name="CADRefinementIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsCADNeedCustomerConfirmation" Nullable="false" />
+          <Property Type="String" Name="DeliveryType" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliveryIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliveryToAddress" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsInstallProvided" Nullable="false" />
+          <Property Type="String" Name="InstallType" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InstallIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" />
+          <Property Type="String" Name="EnqNo" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="Permission_Id" />
+          </Key>
+          <Property Type="Int32" Name="Permission_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Permission_Name" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Product_Id" />
+          </Key>
+          <Property Type="Int32" Name="Product_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Product_Code" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Product_Name" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HuangliaoCode" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JiaCode" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PianCode" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Long" />
+          <Property Type="Int32" Name="Width" />
+          <Property Type="Int32" Name="Deep" />
+          <Property Type="String" Name="Color" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Location" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Texure" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Single" Name="QuantityM2" />
+          <Property Type="String" Name="SupplierName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="PurchasePrice" />
+          <Property Type="Single" Name="PriceM" />
+          <Property Type="Single" Name="PriceM2" />
+          <Property Type="Double" Name="PriceOther" />
+          <Property Type="String" Name="Alias1" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Alias2" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SampleCodes" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Intro" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImgPath" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PurchaseOrder">
+          <Key>
+            <PropertyRef Name="Purchase_Id" />
+          </Key>
+          <Property Type="Int32" Name="Purchase_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Purchase_No" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceNo" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceType" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="DateTime" Name="ApplyPurchaseDate" />
+          <Property Type="DateTime" Name="ExpectedCompleteDate" />
+          <Property Type="String" Name="EnqOrdMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachiningCreateMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PurchaseMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PurchaseApplyMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ApproveMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachTableCreateMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PurchaseIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="PurchaseOrderItem">
+          <Key>
+            <PropertyRef Name="PurchaseOrderItem_Id" />
+          </Key>
+          <Property Type="Int32" Name="PurchaseOrderItem_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PO_Id" Nullable="false" />
+          <Property Type="String" Name="Intro" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Product_Code" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Code" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Long" Nullable="false" />
+          <Property Type="Int32" Name="Width" Nullable="false" />
+          <Property Type="Int32" Name="Deepth" Nullable="false" />
+          <Property Type="Int32" Name="Quantity" />
+          <Property Type="Double" Name="Square" />
+        </EntityType>
+        <EntityType Name="Quotation">
+          <Key>
+            <PropertyRef Name="Quotation_Id" />
+          </Key>
+          <Property Type="Int32" Name="Quotation_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SourceType" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceNo" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Quotation_No" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="EnqOrdMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QuotationMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QuotationIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerCompanyName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerContactName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerAddress" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerQQ" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerEmail" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone1" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone2" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerOthers" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsSampleProvidedToCustomer" Nullable="false" />
+          <Property Type="Boolean" Name="IsCustomerProvideSample" Nullable="false" />
+          <Property Type="Boolean" Name="IsCustomerProvideImage" Nullable="false" />
+          <Property Type="Boolean" Name="IsSurveyNeeded" Nullable="false" />
+          <Property Type="String" Name="SurveyType" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SurveyIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsCADRefinementNeeded" Nullable="false" />
+          <Property Type="String" Name="CADRefinementIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsCADNeedCustomerConfirmation" Nullable="false" />
+          <Property Type="String" Name="DeliveryType" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliveryIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliveryToAddress" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsInstallProvided" Nullable="false" />
+          <Property Type="String" Name="InstallType" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InstallIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" />
+          <Property Type="String" Name="EnqNo" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="Receipt">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SourceType" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceNo" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ReceivedDate" Nullable="false" />
+          <Property Type="Double" Name="ReceivedAmount" />
+          <Property Type="String" Name="Man" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Refine">
+          <Key>
+            <PropertyRef Name="Refine_Id" />
+          </Key>
+          <Property Type="Int32" Name="Refine_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Refine_No" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceType" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceNo" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="EnqOrdMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RefineMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="RequestCompleteDate" />
+          <Property Type="String" Name="Status" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="NeedCustomerConfirm" Nullable="false" />
+          <Property Type="String" Name="CustomerConfirmIntro" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IncludeMaching" Nullable="false" />
+          <Property Type="Boolean" Name="NeedApprove" Nullable="false" />
+          <Property Type="String" Name="RefineIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerCompanyName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerContactName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerAddress" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerQQ" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerEmail" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone1" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone2" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerOthers" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" />
+          <Property Type="String" Name="EnqNo" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="RefineItem">
+          <Key>
+            <PropertyRef Name="RefineItem_Id" />
+          </Key>
+          <Property Type="Int32" Name="RefineItem_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RefineFilePath" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="RefineItemDate" />
+          <Property Type="String" Name="RefineFileName" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" />
+          <Property Type="Int32" Name="Refine_Id" Nullable="false" />
+          <Property Type="String" Name="Intro" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Role_Id" />
+          </Key>
+          <Property Type="Int32" Name="Role_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Role_Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolePermission">
+          <Key>
+            <PropertyRef Name="RolePermission_Id" />
+          </Key>
+          <Property Type="Int32" Name="RolePermission_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Role_Id" Nullable="false" />
+          <Property Type="Int32" Name="Permission_Id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sample">
+          <Key>
+            <PropertyRef Name="Sample_Id" />
+          </Key>
+          <Property Type="Int32" Name="Sample_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="MaterialCode" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MaterialName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SampleCode" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SampleTexure" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SampleLong" />
+          <Property Type="Int32" Name="SampleWidth" />
+          <Property Type="Int32" Name="SampleDeep" />
+          <Property Type="String" Name="SampleColor" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SampleLocation" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="SampleSquare" />
+          <Property Type="String" Name="Supplier" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="PurchasePrice" />
+          <Property Type="Double" Name="PriceM" />
+          <Property Type="Double" Name="PriceM2" />
+          <Property Type="String" Name="Alias1" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Alias2" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SampleIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImgPath" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SampleProvid">
+          <Key>
+            <PropertyRef Name="SampleToCustomer_Id" />
+          </Key>
+          <Property Type="Int32" Name="SampleToCustomer_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SampleDirection" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SampleName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SampleIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceType" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceNo" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" />
+        </EntityType>
+        <EntityType Name="Seed">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="TableName" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CurrentNo" Nullable="false" />
+          <Property Type="String" Name="Date" MaxLength="8" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Settlement">
+          <Key>
+            <PropertyRef Name="St_Id" />
+          </Key>
+          <Property Type="Int32" Name="St_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="St_No" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="DateTime" Name="DeliveryDate" />
+          <Property Type="String" Name="StMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceType" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceNo" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeliveryList" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StLocation" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerCompanyName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerContactName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerAddress" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerQQ" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerEmail" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone1" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone2" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerOthers" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="TotalAmount" />
+          <Property Type="Double" Name="FirstAmount" />
+          <Property Type="Double" Name="AmountReceived" />
+          <Property Type="String" Name="ReceivableIntro" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="Supplier_Id" />
+          </Key>
+          <Property Type="Int32" Name="Supplier_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Supplier_Name" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Supplier_ContactName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Supplier_Phone" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="64" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Survey">
+          <Key>
+            <PropertyRef Name="Survey_Id" />
+          </Key>
+          <Property Type="Int32" Name="Survey_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Survey_No" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceType" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceNo" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="EnqOrdMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ExpectedSurveyDate" />
+          <Property Type="String" Name="OnSiteContactName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OnSiteContactPhone" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SurveyIntro" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SurveyMan" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GoodsBring" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerCompanyName" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerContactName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerAddress" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerQQ" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerEmail" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone1" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerPhone2" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerOthers" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SurveyImageName" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SurveyImagePath" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" />
+          <Property Type="String" Name="EnqNo" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" />
+        </EntityType>
+        <EntityType Name="SurveyItem">
+          <Key>
+            <PropertyRef Name="SurveyItem_Id" />
+          </Key>
+          <Property Type="Int32" Name="SurveyItem_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Project" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Intro" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Spec" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Unit" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Quantity" />
+          <Property Type="String" Name="Remark" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Type="Int32" Name="User_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RealName" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone1" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone2" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Department" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRole_Id" />
+          </Key>
+          <Property Type="Int32" Name="UserRole_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="User_Id" Nullable="false" />
+          <Property Type="Int32" Name="Role_Id" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LineItem">
+          <Key>
+            <PropertyRef Name="LineItem_Id" />
+          </Key>
+          <Property Type="Int32" Name="LineItem_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="SourceId" Nullable="false" />
+          <Property Type="String" Name="SourceType" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Project" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Intro" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Spec" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Unit" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="UnitPrice" />
+          <Property Type="Double" Name="Quantity" />
+          <Property Type="String" Name="Remark" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OriginNo" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Monitor">
+          <Key>
+            <PropertyRef Name="MonitorEn" />
+          </Key>
+          <Property Type="Int32" Name="MonitorEn" Nullable="false" />
+          <Property Type="Int32" Name="MonitorV" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SMSDbModelStoreContainer" CdmEntityContainer="SMSDbEntities">
+          <FunctionImportMapping FunctionImportName="Proce_GetProductByJia" FunctionName="SMSDbModel.Store.Proce_GetProductByJia">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SMSDbModel.Proce_GetProductByJia_Result">
+                <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+                <ScalarProperty Name="Product_Code" ColumnName="Product_Code" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="PriceM" ColumnName="PriceM" />
+                <ScalarProperty Name="PriceM2" ColumnName="PriceM2" />
+                <ScalarProperty Name="HuangliaoCode" ColumnName="HuangliaoCode" />
+                <ScalarProperty Name="JiaCode" ColumnName="JiaCode" />
+                <ScalarProperty Name="QuantityM2" ColumnName="QuantityM2" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Proce_GetProductByCode" FunctionName="SMSDbModel.Store.Proce_GetProductByCode">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SMSDbModel.Proce_GetProductByCode_Result">
+                <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+                <ScalarProperty Name="Product_Code" ColumnName="Product_Code" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="PriceM" ColumnName="PriceM" />
+                <ScalarProperty Name="PriceM2" ColumnName="PriceM2" />
+                <ScalarProperty Name="QuantityM2" ColumnName="QuantityM2" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Proce_GetProductByHuang" FunctionName="SMSDbModel.Store.Proce_GetProductByHuang">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SMSDbModel.Proce_GetProductByHuang_Result">
+                <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+                <ScalarProperty Name="Product_Code" ColumnName="Product_Code" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="PriceM" ColumnName="PriceM" />
+                <ScalarProperty Name="PriceM2" ColumnName="PriceM2" />
+                <ScalarProperty Name="HuangliaoCode" ColumnName="HuangliaoCode" />
+                <ScalarProperty Name="QuantityM2" ColumnName="QuantityM2" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="ConfigGroup">
+            <EntityTypeMapping TypeName="SMSDbModel.ConfigGroup">
+              <MappingFragment StoreEntitySet="ConfigGroup">
+                <ScalarProperty Name="ConfigGroup_Name" ColumnName="ConfigGroup_Name" />
+                <ScalarProperty Name="ConfigGroup_Id" ColumnName="ConfigGroup_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConfigItem">
+            <EntityTypeMapping TypeName="SMSDbModel.ConfigItem">
+              <MappingFragment StoreEntitySet="ConfigItem">
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="ConfigItem_Value" ColumnName="ConfigItem_Value" />
+                <ScalarProperty Name="ConfigItem_Key" ColumnName="ConfigItem_Key" />
+                <ScalarProperty Name="ConfigGroup_Id" ColumnName="ConfigGroup_Id" />
+                <ScalarProperty Name="ConfigItem_Id" ColumnName="ConfigItem_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer">
+            <EntityTypeMapping TypeName="SMSDbModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerOthers" ColumnName="CustomerOthers" />
+                <ScalarProperty Name="QQ" ColumnName="QQ" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="CustomerCompanyName" ColumnName="CustomerCompanyName" />
+                <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerDrawing">
+            <EntityTypeMapping TypeName="SMSDbModel.CustomerDrawing">
+              <MappingFragment StoreEntitySet="CustomerDrawing">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="SourceNo" ColumnName="SourceNo" />
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="CustomerDrawing_Intro" ColumnName="CustomerDrawing_Intro" />
+                <ScalarProperty Name="CustomerDrawing_Path" ColumnName="CustomerDrawing_Path" />
+                <ScalarProperty Name="CustomerDrawing_Name" ColumnName="CustomerDrawing_Name" />
+                <ScalarProperty Name="CustomerDrawing_Id" ColumnName="CustomerDrawing_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Delivery">
+            <EntityTypeMapping TypeName="SMSDbModel.Delivery">
+              <MappingFragment StoreEntitySet="Delivery">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ReceivableIntro" ColumnName="ReceivableIntro" />
+                <ScalarProperty Name="ReceivedAmount" ColumnName="ReceivedAmount" />
+                <ScalarProperty Name="FirstAmount" ColumnName="FirstAmount" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="InsteadOfSettlement" ColumnName="InsteadOfSettlement" />
+                <ScalarProperty Name="InstallDate" ColumnName="InstallDate" />
+                <ScalarProperty Name="InstallPhone" ColumnName="InstallPhone" />
+                <ScalarProperty Name="InstallMan" ColumnName="InstallMan" />
+                <ScalarProperty Name="InstallIntro" ColumnName="InstallIntro" />
+                <ScalarProperty Name="InstallType" ColumnName="InstallType" />
+                <ScalarProperty Name="IsInstallProvided" ColumnName="IsInstallProvided" />
+                <ScalarProperty Name="RealDeliveryDate" ColumnName="RealDeliveryDate" />
+                <ScalarProperty Name="ExpectedDeliveryDate" ColumnName="ExpectedDeliveryDate" />
+                <ScalarProperty Name="DeliveryToAddress" ColumnName="DeliveryToAddress" />
+                <ScalarProperty Name="CarType" ColumnName="CarType" />
+                <ScalarProperty Name="DriverPhone" ColumnName="DriverPhone" />
+                <ScalarProperty Name="DeliveryDriverMan" ColumnName="DeliveryDriverMan" />
+                <ScalarProperty Name="DeliveryIntro" ColumnName="DeliveryIntro" />
+                <ScalarProperty Name="DeliveryType" ColumnName="DeliveryType" />
+                <ScalarProperty Name="CustomerOthers" ColumnName="CustomerOthers" />
+                <ScalarProperty Name="CustomerPhone2" ColumnName="CustomerPhone2" />
+                <ScalarProperty Name="CustomerPhone1" ColumnName="CustomerPhone1" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="CustomerQQ" ColumnName="CustomerQQ" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerContactName" ColumnName="CustomerContactName" />
+                <ScalarProperty Name="CustomerCompanyName" ColumnName="CustomerCompanyName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DeliveryCreateMan" ColumnName="DeliveryCreateMan" />
+                <ScalarProperty Name="MachList" ColumnName="MachList" />
+                <ScalarProperty Name="Order_No" ColumnName="Order_No" />
+                <ScalarProperty Name="OrderMan" ColumnName="OrderMan" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Delivery_No" ColumnName="Delivery_No" />
+                <ScalarProperty Name="Delivery_Id" ColumnName="Delivery_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeliveryItem">
+            <EntityTypeMapping TypeName="SMSDbModel.DeliveryItem">
+              <MappingFragment StoreEntitySet="DeliveryItem">
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Spec" ColumnName="Spec" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="Delivery_Id" ColumnName="Delivery_Id" />
+                <ScalarProperty Name="DeliveryItem_Id" ColumnName="DeliveryItem_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EndProduct">
+            <EntityTypeMapping TypeName="SMSDbModel.EndProduct">
+              <MappingFragment StoreEntitySet="EndProduct">
+                <ScalarProperty Name="ImgPth" ColumnName="ImgPth" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="Deepth" ColumnName="Deepth" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Long" ColumnName="Long" />
+                <ScalarProperty Name="SubCatelog" ColumnName="SubCatelog" />
+                <ScalarProperty Name="Catelog" ColumnName="Catelog" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="EP_Id" ColumnName="EP_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enquiry">
+            <EntityTypeMapping TypeName="SMSDbModel.Enquiry">
+              <MappingFragment StoreEntitySet="Enquiry">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="InstallIntro" ColumnName="InstallIntro" />
+                <ScalarProperty Name="InstallType" ColumnName="InstallType" />
+                <ScalarProperty Name="IsInstallProvided" ColumnName="IsInstallProvided" />
+                <ScalarProperty Name="DeliveryToAddress" ColumnName="DeliveryToAddress" />
+                <ScalarProperty Name="DeliveryIntro" ColumnName="DeliveryIntro" />
+                <ScalarProperty Name="DeliveryType" ColumnName="DeliveryType" />
+                <ScalarProperty Name="CADRefinementIntro" ColumnName="CADRefinementIntro" />
+                <ScalarProperty Name="IsCADNeedCustomerConfirmation" ColumnName="IsCADNeedCustomerConfirmation" />
+                <ScalarProperty Name="IsCADRefinementNeeded" ColumnName="IsCADRefinementNeeded" />
+                <ScalarProperty Name="SurveyIntro" ColumnName="SurveyIntro" />
+                <ScalarProperty Name="SurveyType" ColumnName="SurveyType" />
+                <ScalarProperty Name="IsSurveyNeeded" ColumnName="IsSurveyNeeded" />
+                <ScalarProperty Name="IsCustomerProvideImage" ColumnName="IsCustomerProvideImage" />
+                <ScalarProperty Name="IsCustomerProvideSample" ColumnName="IsCustomerProvideSample" />
+                <ScalarProperty Name="IsSampleProvidedToCustomer" ColumnName="IsSampleProvidedToCustomer" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EnquiryImgPath" ColumnName="EnquiryImgPath" />
+                <ScalarProperty Name="CustomerOthers" ColumnName="CustomerOthers" />
+                <ScalarProperty Name="CustomerPhone2" ColumnName="CustomerPhone2" />
+                <ScalarProperty Name="CustomerPhone1" ColumnName="CustomerPhone1" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="CustomerQQ" ColumnName="CustomerQQ" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerContactName" ColumnName="CustomerContactName" />
+                <ScalarProperty Name="CustomerCompanyName" ColumnName="CustomerCompanyName" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="TimeLimitRemark" ColumnName="TimeLimitRemark" />
+                <ScalarProperty Name="ExpectedEndDate" ColumnName="ExpectedEndDate" />
+                <ScalarProperty Name="ExpectedBeginDate" ColumnName="ExpectedBeginDate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="EnqMan" ColumnName="EnqMan" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Enquiry_No" ColumnName="Enquiry_No" />
+                <ScalarProperty Name="Enquiry_Id" ColumnName="Enquiry_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FollowUp">
+            <EntityTypeMapping TypeName="SMSDbModel.FollowUp">
+              <MappingFragment StoreEntitySet="FollowUp">
+                <ScalarProperty Name="SourceNo" ColumnName="SourceNo" />
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="FollowUp_Notes" ColumnName="FollowUp_Notes" />
+                <ScalarProperty Name="FollowUp_Man" ColumnName="FollowUp_Man" />
+                <ScalarProperty Name="FollowUp_Date" ColumnName="FollowUp_Date" />
+                <ScalarProperty Name="FollowUp_Id" ColumnName="FollowUp_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Footer">
+            <EntityTypeMapping TypeName="SMSDbModel.Footer">
+              <MappingFragment StoreEntitySet="Footer">
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="SourceNo" ColumnName="SourceNo" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InstallLookup">
+            <EntityTypeMapping TypeName="SMSDbModel.InstallLookup">
+              <MappingFragment StoreEntitySet="InstallLookup">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="PriceOther" ColumnName="PriceOther" />
+                <ScalarProperty Name="PriceM2" ColumnName="PriceM2" />
+                <ScalarProperty Name="PriceM" ColumnName="PriceM" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Install_Id" ColumnName="Install_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Machining">
+            <EntityTypeMapping TypeName="SMSDbModel.Machining">
+              <MappingFragment StoreEntitySet="Machining">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="InsteadIntro" ColumnName="InsteadIntro" />
+                <ScalarProperty Name="RefineNo" ColumnName="RefineNo" />
+                <ScalarProperty Name="IsRefineInstead" ColumnName="IsRefineInstead" />
+                <ScalarProperty Name="CustomerOthers" ColumnName="CustomerOthers" />
+                <ScalarProperty Name="CustomerPhone2" ColumnName="CustomerPhone2" />
+                <ScalarProperty Name="CustomerPhone1" ColumnName="CustomerPhone1" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="CustomerQQ" ColumnName="CustomerQQ" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerContactName" ColumnName="CustomerContactName" />
+                <ScalarProperty Name="CustomerCompanyName" ColumnName="CustomerCompanyName" />
+                <ScalarProperty Name="MachIntro" ColumnName="MachIntro" />
+                <ScalarProperty Name="ExpectedInstallDate" ColumnName="ExpectedInstallDate" />
+                <ScalarProperty Name="ExpectedDeliveryDate" ColumnName="ExpectedDeliveryDate" />
+                <ScalarProperty Name="CompleteDate" ColumnName="CompleteDate" />
+                <ScalarProperty Name="ExpectedCompleteDate" ColumnName="ExpectedCompleteDate" />
+                <ScalarProperty Name="ApplyDate" ColumnName="ApplyDate" />
+                <ScalarProperty Name="MachMan" ColumnName="MachMan" />
+                <ScalarProperty Name="SurveyMan" ColumnName="SurveyMan" />
+                <ScalarProperty Name="RefineMan" ColumnName="RefineMan" />
+                <ScalarProperty Name="SalesMan" ColumnName="SalesMan" />
+                <ScalarProperty Name="ProcessCreateMan" ColumnName="ProcessCreateMan" />
+                <ScalarProperty Name="MachCreateMan" ColumnName="MachCreateMan" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SourceNo" ColumnName="SourceNo" />
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="Mach_No" ColumnName="Mach_No" />
+                <ScalarProperty Name="Mach_Id" ColumnName="Mach_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MachItem">
+            <EntityTypeMapping TypeName="SMSDbModel.MachItem">
+              <MappingFragment StoreEntitySet="MachItem">
+                <ScalarProperty Name="DeepthMachList" ColumnName="DeepthMachList" />
+                <ScalarProperty Name="WidthMachList" ColumnName="WidthMachList" />
+                <ScalarProperty Name="LongMachList" ColumnName="LongMachList" />
+                <ScalarProperty Name="MachIntro" ColumnName="MachIntro" />
+                <ScalarProperty Name="Square" ColumnName="Square" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Deepth" ColumnName="Deepth" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Long" ColumnName="Long" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Product_Code" ColumnName="Product_Code" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="Mach_Id" ColumnName="Mach_Id" />
+                <ScalarProperty Name="MI_Id" ColumnName="MI_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MachLookUp">
+            <EntityTypeMapping TypeName="SMSDbModel.MachLookUp">
+              <MappingFragment StoreEntitySet="MachLookUp">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="IdentityImgPath" ColumnName="IdentityImgPath" />
+                <ScalarProperty Name="MachIdentity" ColumnName="MachIdentity" />
+                <ScalarProperty Name="PriceOther" ColumnName="PriceOther" />
+                <ScalarProperty Name="PriceM2" ColumnName="PriceM2" />
+                <ScalarProperty Name="PriceM" ColumnName="PriceM" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Mach_Id" ColumnName="Mach_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MachSummary">
+            <EntityTypeMapping TypeName="SMSDbModel.MachSummary">
+              <MappingFragment StoreEntitySet="MachSummary">
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="MachName" ColumnName="MachName" />
+                <ScalarProperty Name="MachIntro" ColumnName="MachIntro" />
+                <ScalarProperty Name="MachId" ColumnName="MachId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="SMSDbModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EnqNo" ColumnName="EnqNo" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="InstallIntro" ColumnName="InstallIntro" />
+                <ScalarProperty Name="InstallType" ColumnName="InstallType" />
+                <ScalarProperty Name="IsInstallProvided" ColumnName="IsInstallProvided" />
+                <ScalarProperty Name="DeliveryToAddress" ColumnName="DeliveryToAddress" />
+                <ScalarProperty Name="DeliveryIntro" ColumnName="DeliveryIntro" />
+                <ScalarProperty Name="DeliveryType" ColumnName="DeliveryType" />
+                <ScalarProperty Name="IsCADNeedCustomerConfirmation" ColumnName="IsCADNeedCustomerConfirmation" />
+                <ScalarProperty Name="CADRefinementIntro" ColumnName="CADRefinementIntro" />
+                <ScalarProperty Name="IsCADRefinementNeeded" ColumnName="IsCADRefinementNeeded" />
+                <ScalarProperty Name="SurveyIntro" ColumnName="SurveyIntro" />
+                <ScalarProperty Name="SurveyType" ColumnName="SurveyType" />
+                <ScalarProperty Name="IsSurveyNeeded" ColumnName="IsSurveyNeeded" />
+                <ScalarProperty Name="IsCustomerProvideImage" ColumnName="IsCustomerProvideImage" />
+                <ScalarProperty Name="IsCustomerProvideSample" ColumnName="IsCustomerProvideSample" />
+                <ScalarProperty Name="IsSampleProvidedToCustomer" ColumnName="IsSampleProvidedToCustomer" />
+                <ScalarProperty Name="CustomerOthers" ColumnName="CustomerOthers" />
+                <ScalarProperty Name="CustomerPhone2" ColumnName="CustomerPhone2" />
+                <ScalarProperty Name="CustomerPhone1" ColumnName="CustomerPhone1" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="CustomerQQ" ColumnName="CustomerQQ" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerContactName" ColumnName="CustomerContactName" />
+                <ScalarProperty Name="CustomerCompanyName" ColumnName="CustomerCompanyName" />
+                <ScalarProperty Name="OrderIntro" ColumnName="OrderIntro" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="OrderMan" ColumnName="OrderMan" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="SourceNo" ColumnName="SourceNo" />
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="Order_No" ColumnName="Order_No" />
+                <ScalarProperty Name="Order_Id" ColumnName="Order_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permission">
+            <EntityTypeMapping TypeName="SMSDbModel.Permission">
+              <MappingFragment StoreEntitySet="Permission">
+                <ScalarProperty Name="Permission_Name" ColumnName="Permission_Name" />
+                <ScalarProperty Name="Permission_Id" ColumnName="Permission_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="SMSDbModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="SampleCodes" ColumnName="SampleCodes" />
+                <ScalarProperty Name="Alias2" ColumnName="Alias2" />
+                <ScalarProperty Name="Alias1" ColumnName="Alias1" />
+                <ScalarProperty Name="PriceOther" ColumnName="PriceOther" />
+                <ScalarProperty Name="PriceM2" ColumnName="PriceM2" />
+                <ScalarProperty Name="PriceM" ColumnName="PriceM" />
+                <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="QuantityM2" ColumnName="QuantityM2" />
+                <ScalarProperty Name="Texure" ColumnName="Texure" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Deep" ColumnName="Deep" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Long" ColumnName="Long" />
+                <ScalarProperty Name="PianCode" ColumnName="PianCode" />
+                <ScalarProperty Name="JiaCode" ColumnName="JiaCode" />
+                <ScalarProperty Name="HuangliaoCode" ColumnName="HuangliaoCode" />
+                <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+                <ScalarProperty Name="Product_Code" ColumnName="Product_Code" />
+                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseOrder">
+            <EntityTypeMapping TypeName="SMSDbModel.PurchaseOrder">
+              <MappingFragment StoreEntitySet="PurchaseOrder">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="PurchaseIntro" ColumnName="PurchaseIntro" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="MachTableCreateMan" ColumnName="MachTableCreateMan" />
+                <ScalarProperty Name="ApproveMan" ColumnName="ApproveMan" />
+                <ScalarProperty Name="PurchaseApplyMan" ColumnName="PurchaseApplyMan" />
+                <ScalarProperty Name="PurchaseMan" ColumnName="PurchaseMan" />
+                <ScalarProperty Name="MachiningCreateMan" ColumnName="MachiningCreateMan" />
+                <ScalarProperty Name="EnqOrdMan" ColumnName="EnqOrdMan" />
+                <ScalarProperty Name="ExpectedCompleteDate" ColumnName="ExpectedCompleteDate" />
+                <ScalarProperty Name="ApplyPurchaseDate" ColumnName="ApplyPurchaseDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="SourceNo" ColumnName="SourceNo" />
+                <ScalarProperty Name="Purchase_No" ColumnName="Purchase_No" />
+                <ScalarProperty Name="Purchase_Id" ColumnName="Purchase_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseOrderItem">
+            <EntityTypeMapping TypeName="SMSDbModel.PurchaseOrderItem">
+              <MappingFragment StoreEntitySet="PurchaseOrderItem">
+                <ScalarProperty Name="Square" ColumnName="Square" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Deepth" ColumnName="Deepth" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Long" ColumnName="Long" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Product_Code" ColumnName="Product_Code" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="PO_Id" ColumnName="PO_Id" />
+                <ScalarProperty Name="PurchaseOrderItem_Id" ColumnName="PurchaseOrderItem_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Quotation">
+            <EntityTypeMapping TypeName="SMSDbModel.Quotation">
+              <MappingFragment StoreEntitySet="Quotation">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EnqNo" ColumnName="EnqNo" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="InstallIntro" ColumnName="InstallIntro" />
+                <ScalarProperty Name="InstallType" ColumnName="InstallType" />
+                <ScalarProperty Name="IsInstallProvided" ColumnName="IsInstallProvided" />
+                <ScalarProperty Name="DeliveryToAddress" ColumnName="DeliveryToAddress" />
+                <ScalarProperty Name="DeliveryIntro" ColumnName="DeliveryIntro" />
+                <ScalarProperty Name="DeliveryType" ColumnName="DeliveryType" />
+                <ScalarProperty Name="IsCADNeedCustomerConfirmation" ColumnName="IsCADNeedCustomerConfirmation" />
+                <ScalarProperty Name="CADRefinementIntro" ColumnName="CADRefinementIntro" />
+                <ScalarProperty Name="IsCADRefinementNeeded" ColumnName="IsCADRefinementNeeded" />
+                <ScalarProperty Name="SurveyIntro" ColumnName="SurveyIntro" />
+                <ScalarProperty Name="SurveyType" ColumnName="SurveyType" />
+                <ScalarProperty Name="IsSurveyNeeded" ColumnName="IsSurveyNeeded" />
+                <ScalarProperty Name="IsCustomerProvideImage" ColumnName="IsCustomerProvideImage" />
+                <ScalarProperty Name="IsCustomerProvideSample" ColumnName="IsCustomerProvideSample" />
+                <ScalarProperty Name="IsSampleProvidedToCustomer" ColumnName="IsSampleProvidedToCustomer" />
+                <ScalarProperty Name="CustomerOthers" ColumnName="CustomerOthers" />
+                <ScalarProperty Name="CustomerPhone2" ColumnName="CustomerPhone2" />
+                <ScalarProperty Name="CustomerPhone1" ColumnName="CustomerPhone1" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="CustomerQQ" ColumnName="CustomerQQ" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerContactName" ColumnName="CustomerContactName" />
+                <ScalarProperty Name="CustomerCompanyName" ColumnName="CustomerCompanyName" />
+                <ScalarProperty Name="QuotationIntro" ColumnName="QuotationIntro" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="QuotationMan" ColumnName="QuotationMan" />
+                <ScalarProperty Name="EnqOrdMan" ColumnName="EnqOrdMan" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Quotation_No" ColumnName="Quotation_No" />
+                <ScalarProperty Name="SourceNo" ColumnName="SourceNo" />
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="Quotation_Id" ColumnName="Quotation_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Receipt">
+            <EntityTypeMapping TypeName="SMSDbModel.Receipt">
+              <MappingFragment StoreEntitySet="Receipt">
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Man" ColumnName="Man" />
+                <ScalarProperty Name="ReceivedAmount" ColumnName="ReceivedAmount" />
+                <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+                <ScalarProperty Name="SourceNo" ColumnName="SourceNo" />
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Refine">
+            <EntityTypeMapping TypeName="SMSDbModel.Refine">
+              <MappingFragment StoreEntitySet="Refine">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EnqNo" ColumnName="EnqNo" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CustomerOthers" ColumnName="CustomerOthers" />
+                <ScalarProperty Name="CustomerPhone2" ColumnName="CustomerPhone2" />
+                <ScalarProperty Name="CustomerPhone1" ColumnName="CustomerPhone1" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="CustomerQQ" ColumnName="CustomerQQ" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerContactName" ColumnName="CustomerContactName" />
+                <ScalarProperty Name="CustomerCompanyName" ColumnName="CustomerCompanyName" />
+                <ScalarProperty Name="RefineIntro" ColumnName="RefineIntro" />
+                <ScalarProperty Name="NeedApprove" ColumnName="NeedApprove" />
+                <ScalarProperty Name="IncludeMaching" ColumnName="IncludeMaching" />
+                <ScalarProperty Name="CustomerConfirmIntro" ColumnName="CustomerConfirmIntro" />
+                <ScalarProperty Name="NeedCustomerConfirm" ColumnName="NeedCustomerConfirm" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RequestCompleteDate" ColumnName="RequestCompleteDate" />
+                <ScalarProperty Name="RefineMan" ColumnName="RefineMan" />
+                <ScalarProperty Name="EnqOrdMan" ColumnName="EnqOrdMan" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="SourceNo" ColumnName="SourceNo" />
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="Refine_No" ColumnName="Refine_No" />
+                <ScalarProperty Name="Refine_Id" ColumnName="Refine_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RefineItem">
+            <EntityTypeMapping TypeName="SMSDbModel.RefineItem">
+              <MappingFragment StoreEntitySet="RefineItem">
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="Refine_Id" ColumnName="Refine_Id" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="RefineFileName" ColumnName="RefineFileName" />
+                <ScalarProperty Name="RefineItemDate" ColumnName="RefineItemDate" />
+                <ScalarProperty Name="RefineFilePath" ColumnName="RefineFilePath" />
+                <ScalarProperty Name="RefineItem_Id" ColumnName="RefineItem_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="SMSDbModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+                <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolePermission">
+            <EntityTypeMapping TypeName="SMSDbModel.RolePermission">
+              <MappingFragment StoreEntitySet="RolePermission">
+                <ScalarProperty Name="Permission_Id" ColumnName="Permission_Id" />
+                <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+                <ScalarProperty Name="RolePermission_Id" ColumnName="RolePermission_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sample">
+            <EntityTypeMapping TypeName="SMSDbModel.Sample">
+              <MappingFragment StoreEntitySet="Sample">
+                <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+                <ScalarProperty Name="SampleIntro" ColumnName="SampleIntro" />
+                <ScalarProperty Name="Alias2" ColumnName="Alias2" />
+                <ScalarProperty Name="Alias1" ColumnName="Alias1" />
+                <ScalarProperty Name="PriceM2" ColumnName="PriceM2" />
+                <ScalarProperty Name="PriceM" ColumnName="PriceM" />
+                <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="SampleSquare" ColumnName="SampleSquare" />
+                <ScalarProperty Name="SampleLocation" ColumnName="SampleLocation" />
+                <ScalarProperty Name="SampleColor" ColumnName="SampleColor" />
+                <ScalarProperty Name="SampleDeep" ColumnName="SampleDeep" />
+                <ScalarProperty Name="SampleWidth" ColumnName="SampleWidth" />
+                <ScalarProperty Name="SampleLong" ColumnName="SampleLong" />
+                <ScalarProperty Name="SampleTexure" ColumnName="SampleTexure" />
+                <ScalarProperty Name="SampleCode" ColumnName="SampleCode" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+                <ScalarProperty Name="Sample_Id" ColumnName="Sample_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SampleProvid">
+            <EntityTypeMapping TypeName="SMSDbModel.SampleProvid">
+              <MappingFragment StoreEntitySet="SampleProvid">
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="SourceNo" ColumnName="SourceNo" />
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="SampleIntro" ColumnName="SampleIntro" />
+                <ScalarProperty Name="SampleName" ColumnName="SampleName" />
+                <ScalarProperty Name="SampleDirection" ColumnName="SampleDirection" />
+                <ScalarProperty Name="SampleToCustomer_Id" ColumnName="SampleToCustomer_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seed">
+            <EntityTypeMapping TypeName="SMSDbModel.Seed">
+              <MappingFragment StoreEntitySet="Seed">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CurrentNo" ColumnName="CurrentNo" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Settlement">
+            <EntityTypeMapping TypeName="SMSDbModel.Settlement">
+              <MappingFragment StoreEntitySet="Settlement">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ReceivableIntro" ColumnName="ReceivableIntro" />
+                <ScalarProperty Name="AmountReceived" ColumnName="AmountReceived" />
+                <ScalarProperty Name="FirstAmount" ColumnName="FirstAmount" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="CustomerOthers" ColumnName="CustomerOthers" />
+                <ScalarProperty Name="CustomerPhone2" ColumnName="CustomerPhone2" />
+                <ScalarProperty Name="CustomerPhone1" ColumnName="CustomerPhone1" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="CustomerQQ" ColumnName="CustomerQQ" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerContactName" ColumnName="CustomerContactName" />
+                <ScalarProperty Name="CustomerCompanyName" ColumnName="CustomerCompanyName" />
+                <ScalarProperty Name="StLocation" ColumnName="StLocation" />
+                <ScalarProperty Name="DeliveryList" ColumnName="DeliveryList" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SourceNo" ColumnName="SourceNo" />
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="StMan" ColumnName="StMan" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="St_No" ColumnName="St_No" />
+                <ScalarProperty Name="St_Id" ColumnName="St_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Supplier">
+            <EntityTypeMapping TypeName="SMSDbModel.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Supplier_Phone" ColumnName="Supplier_Phone" />
+                <ScalarProperty Name="Supplier_ContactName" ColumnName="Supplier_ContactName" />
+                <ScalarProperty Name="Supplier_Name" ColumnName="Supplier_Name" />
+                <ScalarProperty Name="Supplier_Id" ColumnName="Supplier_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Survey">
+            <EntityTypeMapping TypeName="SMSDbModel.Survey">
+              <MappingFragment StoreEntitySet="Survey">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EnqNo" ColumnName="EnqNo" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="SurveyImagePath" ColumnName="SurveyImagePath" />
+                <ScalarProperty Name="SurveyImageName" ColumnName="SurveyImageName" />
+                <ScalarProperty Name="CustomerOthers" ColumnName="CustomerOthers" />
+                <ScalarProperty Name="CustomerPhone2" ColumnName="CustomerPhone2" />
+                <ScalarProperty Name="CustomerPhone1" ColumnName="CustomerPhone1" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="CustomerQQ" ColumnName="CustomerQQ" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerContactName" ColumnName="CustomerContactName" />
+                <ScalarProperty Name="CustomerCompanyName" ColumnName="CustomerCompanyName" />
+                <ScalarProperty Name="GoodsBring" ColumnName="GoodsBring" />
+                <ScalarProperty Name="SurveyMan" ColumnName="SurveyMan" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SurveyIntro" ColumnName="SurveyIntro" />
+                <ScalarProperty Name="OnSiteContactPhone" ColumnName="OnSiteContactPhone" />
+                <ScalarProperty Name="OnSiteContactName" ColumnName="OnSiteContactName" />
+                <ScalarProperty Name="ExpectedSurveyDate" ColumnName="ExpectedSurveyDate" />
+                <ScalarProperty Name="EnqOrdMan" ColumnName="EnqOrdMan" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="SourceNo" ColumnName="SourceNo" />
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="Survey_No" ColumnName="Survey_No" />
+                <ScalarProperty Name="Survey_Id" ColumnName="Survey_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SurveyItem">
+            <EntityTypeMapping TypeName="SMSDbModel.SurveyItem">
+              <MappingFragment StoreEntitySet="SurveyItem">
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Spec" ColumnName="Spec" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="SurveyItem_Id" ColumnName="SurveyItem_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="SMSDbModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RealName" ColumnName="RealName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRole">
+            <EntityTypeMapping TypeName="SMSDbModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="UserRole_Id" ColumnName="UserRole_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LineItem">
+            <EntityTypeMapping TypeName="SMSDbModel.LineItem">
+              <MappingFragment StoreEntitySet="LineItem">
+                <ScalarProperty Name="OriginNo" ColumnName="OriginNo" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Spec" ColumnName="Spec" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Intro" ColumnName="Intro" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+                <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+                <ScalarProperty Name="LineItem_Id" ColumnName="LineItem_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Monitor">
+            <EntityTypeMapping TypeName="SMSDbModel.Monitor">
+              <MappingFragment StoreEntitySet="Monitor">
+                <ScalarProperty Name="MonitorV" ColumnName="MonitorV" />
+                <ScalarProperty Name="MonitorEn" ColumnName="MonitorEn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="DB" ZoomLevel="78" ShowGrid="true">
+        <EntityTypeShape EntityType="SMSDbModel.ConfigGroup" Width="1.5" PointX="0.75" PointY="0.75" Height="1.2849739583333246" />
+        <EntityTypeShape EntityType="SMSDbModel.ConfigItem" Width="1.5" PointX="2.75" PointY="0.75" Height="1.7908333333333246" />
+        <EntityTypeShape EntityType="SMSDbModel.Customer" Width="1.5" PointX="0.75" PointY="3.75" Height="2.4653125000000102" />
+        <EntityTypeShape EntityType="SMSDbModel.CustomerDrawing" Width="1.5" PointX="2.75" PointY="3.75" Height="2.2966927083333246" />
+        <EntityTypeShape EntityType="SMSDbModel.Delivery" Width="1.5" PointX="4.75" PointY="0.75" Height="7.3552864583333246" />
+        <EntityTypeShape EntityType="SMSDbModel.DeliveryItem" Width="1.5" PointX="6.75" PointY="0.75" Height="2.971171874999996" />
+        <EntityTypeShape EntityType="SMSDbModel.EndProduct" Width="1.5" PointX="6.75" PointY="4.75" Height="3.6456510416666674" />
+        <EntityTypeShape EntityType="SMSDbModel.Enquiry" Width="1.5" PointX="0.75" PointY="7.75" Height="7.1866666666666674" />
+        <EntityTypeShape EntityType="SMSDbModel.FollowUp" Width="1.5" PointX="8.75" PointY="0.75" Height="1.9594531249999818" />
+        <EntityTypeShape EntityType="SMSDbModel.Footer" Width="1.5" PointX="8.75" PointY="3.75" Height="1.6222135416666674" />
+        <EntityTypeShape EntityType="SMSDbModel.InstallLookup" Width="1.5" PointX="8.75" PointY="6.75" Height="2.2966927083333246" />
+        <EntityTypeShape EntityType="SMSDbModel.Machining" Width="1.5" PointX="4.75" PointY="9.75" Height="6.0063281249999818" />
+        <EntityTypeShape EntityType="SMSDbModel.MachItem" Width="1.5" PointX="10.75" PointY="0.75" Height="3.3084114583333246" />
+        <EntityTypeShape EntityType="SMSDbModel.MachLookUp" Width="1.5" PointX="10.75" PointY="5.75" Height="2.6339322916666674" />
+        <EntityTypeShape EntityType="SMSDbModel.MachSummary" Width="1.5" PointX="6.75" PointY="10.75" Height="2.2966927083333246" />
+        <EntityTypeShape EntityType="SMSDbModel.Order" Width="1.5" PointX="8.75" PointY="10.75" Height="6.8494270833333246" />
+        <EntityTypeShape EntityType="SMSDbModel.Permission" Width="1.5" PointX="10.75" PointY="9.75" Height="1.2849739583333246" />
+        <EntityTypeShape EntityType="SMSDbModel.Product" Width="1.5" PointX="12.75" PointY="0.75" Height="4.8259895833333246" />
+        <EntityTypeShape EntityType="SMSDbModel.PurchaseOrder" Width="1.5" PointX="12.75" PointY="6.75" Height="3.9828906249999818" />
+        <EntityTypeShape EntityType="SMSDbModel.PurchaseOrderItem" Width="1.5" PointX="10.75" PointY="12.75" Height="2.6339322916666674" />
+        <EntityTypeShape EntityType="SMSDbModel.Quotation" Width="1.5" PointX="12.75" PointY="11.75" Height="7.0180468749999818" />
+        <EntityTypeShape EntityType="SMSDbModel.Receipt" Width="1.5" PointX="14.75" PointY="0.75" Height="2.1280729166666674" />
+        <EntityTypeShape EntityType="SMSDbModel.Refine" Width="1.5" PointX="14.75" PointY="3.75" Height="5.3318489583333246" />
+        <EntityTypeShape EntityType="SMSDbModel.RefineItem" Width="1.5" PointX="14.75" PointY="10.75" Height="2.2966927083333246" />
+        <EntityTypeShape EntityType="SMSDbModel.Role" Width="1.5" PointX="14.75" PointY="14.75" Height="1.4535937499999818" />
+        <EntityTypeShape EntityType="SMSDbModel.RolePermission" Width="1.5" PointX="0.75" PointY="15.75" Height="1.4535937499999818" />
+        <EntityTypeShape EntityType="SMSDbModel.Sample" Width="1.5" PointX="16.75" PointY="0.75" Height="4.1515104166666674" />
+        <EntityTypeShape EntityType="SMSDbModel.SampleProvid" Width="1.5" PointX="2.75" PointY="16.75" Height="2.2966927083333246" />
+        <EntityTypeShape EntityType="SMSDbModel.Seed" Width="1.5" PointX="4.75" PointY="16.75" Height="1.6222135416666674" />
+        <EntityTypeShape EntityType="SMSDbModel.Settlement" Width="1.5" PointX="16.75" PointY="5.75" Height="4.8259895833333246" />
+        <EntityTypeShape EntityType="SMSDbModel.Supplier" Width="1.5" PointX="16.75" PointY="11.75" Height="1.7908333333333246" />
+        <EntityTypeShape EntityType="SMSDbModel.Survey" Width="1.5" PointX="16.75" PointY="14.75" Height="5.5004687499999818" />
+        <EntityTypeShape EntityType="SMSDbModel.SurveyItem" Width="1.5" PointX="18.75" PointY="0.75" Height="2.6339322916666674" />
+        <EntityTypeShape EntityType="SMSDbModel.User" Width="1.5" PointX="18.75" PointY="4.75" Height="2.2966927083333246" />
+        <EntityTypeShape EntityType="SMSDbModel.UserRole" Width="1.5" PointX="6.75" PointY="18.75" Height="1.6222135416666674" />
+        <EntityTypeShape EntityType="SMSDbModel.LineItem" Width="1.5" PointX="9.375" PointY="18.75" Height="2.9711718750000102" />
+        <EntityTypeShape EntityType="SMSDbModel.Monitor" Width="1.5" PointX="19.375" PointY="8.75" Height="1.1163541666666674" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
